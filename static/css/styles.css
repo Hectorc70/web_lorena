@@ -1,0 +1,27 @@
+@font-face{
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face{
+    font-family: "Poppins-Bold";
+    src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins";
+}
+:root{
+    --color-principal:#228ECE;
+    --color-secundario:white;
+    --color-resalte:#A5CF4F;
+    --color-sombra-cards: #CECECE;
+    --color-contenedor:white;
+    --color-texto: #565656;
+    --color-texto2: white;
+}
+
+
