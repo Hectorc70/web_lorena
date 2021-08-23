@@ -2,3 +2,9 @@
 .vscode/settings.json
 
 logs/
+
+config.ini
+
+web_project/__pycache__/
+
+web_project/settings/__pycache__/
