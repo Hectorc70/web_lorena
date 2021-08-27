@@ -8,3 +8,13 @@ config.ini
 web_project/__pycache__/
 
 web_project/settings/__pycache__/
+
+web/__pycache__/__init__.cpython-39.pyc
+
+web/__pycache__/admin.cpython-39.pyc
+
+web/__pycache__/models.cpython-39.pyc
+
+web/__pycache__/views.cpython-39.pyc
+
+web/migrations/__pycache__/__init__.cpython-39.pyc
