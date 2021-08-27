@@ -100,19 +100,10 @@ section{
     width: 100%;
     /*  background-color: #228ECE;*/
 }
-#container-about-me{
-    display: block;
-    width: 80%;
-    margin:30px auto;
-}
-#container-photo{
-    display: block;
-    height: 350px;
-    width: 240px;
-    border: solid .5em  var(--color-resalte);
 
+#container-options-services{
+    
 }
-
 #photo{
     display: block;
     position: relative;
