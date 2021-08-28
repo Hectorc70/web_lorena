@@ -15,7 +15,8 @@
     --color-principal:#04629A;
     --color-secundario:#83CDF9;
     --color-secundario2:#ffffff;
-    --color-sombra-cards: #7070709c;
+    --color-secundario3:#F4F7F9;
+    --color-sombra-cards: #70707056;
     --color-contenedor:#F4F7F9;
     --color-texto: #585858;
 }
@@ -92,8 +93,16 @@ body{
 
 
 /*  SECTIONS */
+.title-section{
+    font-size: 1.8rem;
+    color: var(--color-principal);
+    font-family: 'Poppins-Bold';
 
-
+}
+.subtitle{
+    color: var(--color-texto);
+    font-size: 1.0rem;
+}
 
 section{
     display: block;
@@ -166,23 +175,87 @@ section{
 
 
 /* Seccion de presentacion */
+.title-presentation{
+    text-align: center;
+}
 
+.subtitle-presentation{
+    text-align: center;
+}
+#container-presentation{
+    
+    width: 50%;
+    margin: 100px auto;
+}
+
+
+#container-description{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+#container-photo{
+    display: block;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+    background-color: var(--color-secundario3);
+}
 
 #photo{
     display: block;
+    width: 250px;
+    height: 400px;
     position: relative;
-    left: 20px;
-    top: -30px;
-    width: 100%;
-    height: 100%;
     background-color: white;
-    box-shadow:0px 10px 20px 0px var(--color-sombra-cards) ;  
+    /* box-shadow:0px 0px 20px 0px var(--color-sombra-cards) ;   */
 }
 
 #photo img{
-    display: block;
     width: 100%;
     height: 100%;
 }
 
+#data{
+    display: block;
+    margin-top: 50px;
+    margin-left: 50px;
+}
 
+
+#container-line-separator{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.circle-line{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--color-principal);
+}
+
+.line-separator-h{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-principal);
+}
+
+
+
+
+/* Seccion de contacto y sobre nosotros */
+
+
+#section-contact-about-me{
+    background-color: var(--color-secundario2);
+}
