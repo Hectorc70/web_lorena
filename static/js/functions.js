@@ -1,17 +1,20 @@
 'use strict'
 
-async function ViewForm() {
+async function ViewForm(id_form) {
     deshabilitar('header');
     deshabilitar('section-home');
     deshabilitar('section-contact-about-me');
     deshabilitar('footer');
     let visor = document.getElementById('conte-view-form')
     let btn = document.getElementById('btn-cerrar')
-    /* let form = document.getElementById(id_form) */
-
-    /* let elementoEstilo = window.getComputedStyle(visor); */
-    /* let widthVisor = elementoEstilo.getPropertyValue("width"); */
-    visor.style.display = "flex";
+    let form = document.getElementById(id_form);
+    
+    form.style.display = "block";
+    form.style.visibility = "visible";
+    form.style.width = '100%';
+    form.style.height = '100%';
+    
+    visor.style.display = "block";
     visor.style.visibility = "visible";
     visor.style.width = '50%';
     visor.style.height = '80%';
@@ -20,9 +23,12 @@ async function ViewForm() {
     
 }
 
-async function cerrarVisor() {
+async function cerrarVisor(id_form) {
     let conteVisor = document.getElementById('conte-view-form');
-    let btn = document.getElementById('btn-cerrar');
+    let form = document.getElementById(id_form);
+    
+    form.style.display = "none";
+    form.style.visibility = "hidden";
     conteVisor.style.width = '0px';
     conteVisor.style.height = '0px';
     conteVisor.style.display = "none";

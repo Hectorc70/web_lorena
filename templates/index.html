@@ -38,7 +38,7 @@
 
     <section id="section-home">
         <div id="container-options-services">
-            <a class="option-service" onclick="ViewForm()">
+            <a class="option-service" onclick="ViewForm('form-life')">
                 <div class="conte-icon">
                     <svg class="icon-primary" viewBox="0 -28 512.00002 512" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -55,7 +55,7 @@
                 </div>
             </a>
             <div class="border-separator"></div>
-            <a class="option-service">
+            <a class="option-service" onclick="ViewForm('form-car')">
                 <div class="conte-icon">
                     <svg class="icon-primary" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 394.648 394.648"
@@ -117,7 +117,7 @@
                 </div>
             </a>
             <div class="border-separator"></div>
-            <a class="last-item option-service ">
+            <a class="last-item option-service" onclick="ViewForm('form-house')">
                 <div class="conte-icon">
                     <svg class="icon-primary" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 306.773 306.773"
@@ -506,17 +506,57 @@
 
 
     <div id="conte-view-form">
-        <div id="conte-btn-cerrar">
-            <a onclick="cerrarVisor()" id="btn-cerrar">
-                <p>X</p>
-            </a>
-        </div>
-        <div id="form-life">
+        <form id="form-life" action="" class="form">
+            <div class="conte-btn-cerrar">
+                <a onclick="cerrarVisor('form-life')" class="btn-cerrar">
+                    <p>X</p>
+                </a>
+            </div>
+            <div class="container">
+                <div class="container-photo-form item">
+                    <img src="{% static 'images/image-life.jpg' %}" alt="Imagen de pareja sonriendo felicidad">
+                </div>
+    
+                <div class="container-forms item">
+                </div>
+            </div>
+            
+        </form>
 
-        </div>
+        <form id="form-car" action="" class="form">
+            <div class="conte-btn-cerrar">
+                <a class="btn-cerrar" onclick="cerrarVisor('form-car')" >
+                    <p>X</p>
+                </a>
+            </div>
+            <div class="container">
+                <div  class="container-photo-form item">
+                    <img src="{% static 'images/car.jpg' %}" alt="Imagen de pareja sonriendo felicidad">
+                </div>
+
+                <div class="container-forms item">
+                
+                </div>
+            </div>
+        </form>
+
+        <form id="form-house" action="" class="form">
+            <div class="conte-btn-cerrar">
+                <a class="btn-cerrar" onclick="cerrarVisor('form-house')" >
+                    <p>X</p>
+                </a>
+            </div>
+            <div class="container">
+                <div class="container-photo-form item">
+                    <img src="{% static 'images/house.jpg' %}" alt="Imagen de pareja sonriendo felicidad">
+                </div>
+
+                <div class="container-forms item">
+                </div>
+            </div>
+        </form>
+
     </div>
-
-
     <script type="text/javascript">
 
 
