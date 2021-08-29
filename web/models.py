@@ -21,4 +21,9 @@ class LifeInsurance(models.Model):
     mount_year     = models.CharField('Monto a Invertir Anualmente', blank=False, max_length=100, db_column='MountYear')
     comments       = models.CharField('Comentarios Adicionales', blank=True, null=False, max_length=300, db_column='Comments')
 
+    class Meta:
+        verbose_name = "Seguro de Vida"
+        verbose_name_plural = "Seguros de Vida"
+        db_table = "Life_Insurance"
 
+    

@@ -10,7 +10,9 @@
 
 
 
-
+.deshabilitado{
+    pointer-events: none;
+}
 :root{
     --color-principal:#04629A;
     --color-secundario:#83CDF9;

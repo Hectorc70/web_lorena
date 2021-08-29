@@ -8,13 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms_styles.css' %}">
     <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
     <title>
         Inicio
     </title>
 </head>
 
-<body>
+<body id="body">
     <header id="header">
         <img src="{% static 'images/header.jpg' %}" alt="Imagen de dos adultos mayores">
         <nav id="nav">
@@ -36,7 +38,7 @@
 
     <section id="section-home">
         <div id="container-options-services">
-            <a class="option-service">
+            <a class="option-service" onclick="ViewForm()">
                 <div class="conte-icon">
                     <svg class="icon-primary" viewBox="0 -28 512.00002 512" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -388,7 +390,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="footer">
         <div id="container-footer">
             <p class="title-social-networks">Redes Sociales</p>
             <div id="container-social-neworks">
@@ -501,15 +503,41 @@
         </div>
 
     </footer>
+
+
+    <div id="conte-view-form">
+        <div id="conte-btn-cerrar">
+            <a onclick="cerrarVisor()" id="btn-cerrar">
+                <p>X</p>
+            </a>
+        </div>
+        <div id="form-life">
+
+        </div>
+    </div>
+
+
     <script type="text/javascript">
+
+
+
         window.onscroll = function () {
+
+
             animateNavBar();
+
+
         };
 
         window.top = function () {
+
             animateNavBar();
+
+
         };
-        
+
+
+
     </script>
 </body>
 
