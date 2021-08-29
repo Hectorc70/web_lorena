@@ -183,7 +183,6 @@ section{
     text-align: center;
 }
 #container-presentation{
-    
     width: 50%;
     margin: 100px auto;
 }
@@ -257,5 +256,76 @@ section{
 
 
 #section-contact-about-me{
+    display: block;
+    width: 100%;
+    background-color: var(--color-secundario3);
+}
+
+
+#container-contact-about-me{
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+}
+
+#container-contact{
+    display: block;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#container-methods-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 560px;
+    margin-top: 30px;
+}
+
+.method{
+    height: 120px;
+    width: 120px;
     background-color: var(--color-secundario2);
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.icon-method{
+    display: block;
+    fill:  var(--color-secundario);
+    width: 80%;
+    height: 50%;
+    margin: 0px auto;
+
+}
+.description-method{
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1.0rem;
+    color: var(--color-secundario);
+}
+
+/* Sobre nosotros */
+#container-about-me{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+}
+#container-about-me-description{
+    display: block;
+    width: 35%;
+
+}
+#container-value-proposal-description{
+    display: block;
+    width: 45%;
+}
+
+.text-description{
+    text-align: justify;
 }
