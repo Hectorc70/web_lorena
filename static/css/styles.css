@@ -47,7 +47,7 @@ body{
     object-position: 0px 40%;
     
 }
-#nav-bar{
+#nav{
     display: block;
     position: absolute;
     align-items: center;
@@ -55,7 +55,7 @@ body{
     height: 40px;
 }
 
-#nav-bar ul{
+#nav-bar{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -68,26 +68,32 @@ body{
 }
 
 
+
 .option-nav{
-    display: inline-block;
-    width: 30%;
+    display: flex;
+    align-items: center;
+    width: 34%;
+    height: 100%;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-right: .2em solid var(--color-principal) ;
-    border-bottom: .2em solid #04639a00 ;
     cursor: pointer;
 }
 
 .option-nav:hover{
-    background-color: #aad8ee;
-    transition: all 0.5s ease-out;;
+    background-color: var(--color-principal);
+    transition: all 0.5s ease-out;
+}
+
+.option-nav:hover a{
+    color: var(--color-secundario2);
 }
 .option-nav a{
     display: inline-block;
+    width: 100%;
+    height: 80%;
     color: var(--color-principal);
     text-decoration: none;
     font-size: 1.2rem;
+    border-right: .2em solid var(--color-principal) ;
 }
 
 
@@ -120,6 +126,8 @@ section{
     justify-content: space-around;
     width: 30%;
     height: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: var(--color-secundario2);
     box-shadow:0px 0px 10px 0px var(--color-sombra-cards) ; 
     margin: 0px auto;
@@ -127,17 +135,42 @@ section{
 
 .option-service{ 
     display: block;
-    width: 32%;
-    height: 80%;
-    border-right: .2em solid var(--color-principal) ;
+    padding: 10px;
+    width: 30%;
+    height: 100%;
     cursor: pointer;
 }
+.option-service:hover{
+    background-color: var(--color-principal);
+    transition: all .2s ease-out;
+}
+
+.option-service:hover .icon-primary{
+    fill: var(--color-secundario2);
+}
+.option-service:hover .icon-secondary{
+    fill: var(--color-secundario);
+}
+
+.option-service:hover .title-service p{
+    color: var(--color-secundario2);
+}
+
+
+
+.border-separator{
+    width: 2.5px;
+    height: 80%;
+    background-color: var(--color-principal);
+}
+
 .conte-icon{
     display: flex;
     position: relative;
     align-items: center;
     height: 40%;
     width: 100%;
+    margin-bottom: 10px;
 }
 .icon-primary{
     display: block;
@@ -167,6 +200,7 @@ section{
     text-align: center;
     color: var(--color-principal);
     font-size: .9rem;
+    font-family: 'Poppins';
 }
 
 .last-item{
@@ -253,8 +287,6 @@ section{
 
 
 /* Seccion de contacto y sobre nosotros */
-
-
 #section-contact-about-me{
     display: block;
     width: 100%;
@@ -292,6 +324,17 @@ section{
     cursor: pointer;
 }
 
+.method:hover{
+    background-color: var(--color-principal);
+}
+
+.method:hover .icon-method{
+    fill: var(--color-secundario2);
+}
+
+.method:hover .description-method{
+    color: var(--color-secundario2);
+}
 
 .icon-method{
     display: block;
