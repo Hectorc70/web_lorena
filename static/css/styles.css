@@ -70,25 +70,30 @@ body{
 
 
 .option-nav{
-    display: inline-block;
-    width: 30%;
+    display: flex;
+    align-items: center;
+    width: 34%;
+    height: 100%;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-right: .2em solid var(--color-principal) ;
-    border-bottom: .2em solid #04639a00 ;
     cursor: pointer;
 }
 
 .option-nav:hover{
-    background-color: #aad8ee;
+    background-color: var(--color-principal);
     transition: all 0.5s ease-out;;
+}
+
+.option-nav:hover a{
+    color: var(--color-secundario2);
 }
 .option-nav a{
     display: inline-block;
+    width: 100%;
+    height: 80%;
     color: var(--color-principal);
     text-decoration: none;
     font-size: 1.2rem;
+    border-right: .2em solid var(--color-principal) ;
 }
 
 
