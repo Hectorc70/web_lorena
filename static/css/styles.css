@@ -287,8 +287,6 @@ section{
 
 
 /* Seccion de contacto y sobre nosotros */
-
-
 #section-contact-about-me{
     display: block;
     width: 100%;
@@ -326,6 +324,17 @@ section{
     cursor: pointer;
 }
 
+.method:hover{
+    background-color: var(--color-principal);
+}
+
+.method:hover .icon-method{
+    fill: var(--color-secundario2);
+}
+
+.method:hover .description-method{
+    color: var(--color-secundario2);
+}
 
 .icon-method{
     display: block;
