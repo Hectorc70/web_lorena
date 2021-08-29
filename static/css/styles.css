@@ -47,7 +47,7 @@ body{
     object-position: 0px 40%;
     
 }
-#nav-bar{
+#nav{
     display: block;
     position: absolute;
     align-items: center;
@@ -55,7 +55,7 @@ body{
     height: 40px;
 }
 
-#nav-bar ul{
+#nav-bar{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -66,6 +66,7 @@ body{
     background-color: var(--color-secundario2);
     box-shadow:0px 10px 20px 0px #1111115d ;  
 }
+
 
 
 .option-nav{

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
     <title>
         Inicio
     </title>
@@ -17,8 +17,8 @@
 <body>
     <header id="header">
         <img src="{% static 'images/header.jpg' %}" alt="Imagen de dos adultos mayores">
-        <nav id="nav-bar">
-            <ul>
+        <nav id="nav">
+            <ul id="nav-bar">
                 <li class="option-nav">
                     <a href="#section-home">Inicio</a>
                 </li>
@@ -500,7 +500,16 @@
         </div>
 
     </footer>
+    <script type="text/javascript">
+        window.onscroll = function () {
+            animateNavBar();
+        };
 
+        window.top = function () {
+            animateNavBar();
+        };
+        
+    </script>
 </body>
 
 
