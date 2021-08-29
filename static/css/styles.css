@@ -285,7 +285,7 @@ section{
 }
 
 .method{
-    height: 120px;
+    height: 160px;
     width: 120px;
     background-color: var(--color-secundario2);
     padding: 10px;
@@ -315,6 +315,7 @@ section{
     justify-content: space-between;
     width: 100%;
     margin-top: 100px;
+    padding-bottom: 50px;
 }
 #container-about-me-description{
     display: block;
@@ -328,4 +329,67 @@ section{
 
 .text-description{
     text-align: justify;
+}
+
+
+/* Footer  */
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #02304D;
+}
+
+#container-footer{
+    display: block;
+    width: 50%;
+    margin: 0px auto;
+    padding-top: 30px;;
+}
+#container-social-neworks{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.title-social-networks{
+    color: var(--color-secundario2);
+    font-family: 'Poppins-Bold';
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.social-network{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.social-network .icon{
+    fill: var(--color-secundario2);
+}
+
+#container-copyright{
+    display: flex;
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+}
+
+#container-copyright p{
+    color: var(--color-secundario2);
+}
+
+#container-copyright .link{
+    text-decoration: none;
+    margin-left: 3px ;
+    color: var(--color-secundario2);
+}
+
+#container-copyright .link:hover{
+    color: var(--color-secundario);
+}
+
+#container-copyright .important{
+    font-family: 'Poppins-Bold';
 }
