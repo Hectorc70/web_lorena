@@ -65,6 +65,7 @@
     transition: all 0.5s ease-in-out;
 }
 
+
 .form .item{
     width: 50%;
     height: 100%;
@@ -74,9 +75,11 @@
     display: flex;
     width: 100%;
     height: 100%;
+    padding-right: 1px;
     align-items: center;
 
 }
+
 .container-photo-form{
     display: block;
     background-color: var(--color-principal);
@@ -92,4 +95,69 @@
     opacity: 50%;
     border-top-left-radius: .5em;
     border-bottom-left-radius: .5em;
+}
+
+.container-forms{
+    display: block;
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.title-form{
+    text-align: left;
+    top: 20px;
+    height: 9%;
+    position: absolute;
+    font-family: 'Poppins-Bold';
+    font-size: 1.5rem;
+    color: var(--color-principal);
+}
+
+.container-fields{
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+    width: 100%;
+}
+
+/* CAMPOS Y LABELS */
+.labe-field{
+    color: var(--color-principal);
+    font-size: 1.0rem;
+}
+
+.input-field{
+    display: block;
+    background-color: var(--color-secundario3);
+    width: 95%;
+    height: 20px;
+    padding: 2px;
+    padding-left: 10px;
+    border-radius: .3em;
+    text-align: left; 
+    color: var(--color-principal);
+    font-size: .9rem;
+    font-weight: bold;
+    border: 2px solid var(--color-secundario);
+}
+.input-field:hover{
+    border: 2px solid var(--color-principal);
+}
+
+.input-field::placeholder{
+    color: var(--color-texto);
+    font-size: .9rem;
+    font-family: 'Poppins';
+}
+input:focus{
+    outline: none;
+    outline-width: 0;
+    
+}
+
+.field-select{
+
 }
