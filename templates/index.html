@@ -522,11 +522,19 @@
                     <h3 class="title-form">Seguro de Vida,<br> Ahorro e Inversion</h3>
                     <div class="container-fields">
                         {% for field in form_life_insurance %}
-                        <label class="labe-field" for="{{field.label}}">{{ field.label_tag }}</label>
+                        <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
                     
                     {{field}}
 
                     {% endfor %}
+                    
+                <div id="container-button">
+                    <button class="button-submit" type="submit">
+                        Enviar
+                    </button>
+                </div>
+
+
                     </div>
                     
                 </div>

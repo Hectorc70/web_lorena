@@ -13,7 +13,6 @@ async function ViewForm(id_form) {
     form.style.visibility = "visible";
     form.style.width = '100%';
     form.style.height = '100%';
-    
     visor.style.display = "block";
     visor.style.visibility = "visible";
     visor.style.width = '50%';
