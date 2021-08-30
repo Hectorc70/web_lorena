@@ -10,7 +10,9 @@
 
 
 
-
+.deshabilitado{
+    pointer-events: none;
+}
 :root{
     --color-principal:#04629A;
     --color-secundario:#83CDF9;
@@ -18,7 +20,7 @@
     --color-secundario3:#F4F7F9;
     --color-sombra-cards: #70707056;
     --color-contenedor:#F4F7F9;
-    --color-texto: #585858;
+    --color-texto: #8C9BA4;
 }
 
 *{
@@ -27,8 +29,31 @@
     font-family: 'Poppins';
     
 }
+
+
+
 body{
     background-color: var(--color-secundario2);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: var(--color-fondo); 
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-fondo)
+}
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background:#696969; 
+
 }
 /* navagation bar */
 

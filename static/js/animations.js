@@ -1,20 +1,22 @@
 'use strict'
 
 
-function animateNavBar() {
+async function animateNavBar() {
     var navContainer = document.getElementById("nav");
+    let visor = document.getElementById('conte-view-form')
     var nav = document.getElementById("nav-bar");
-    var navPosition = nav.offsetTop;
-
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navContainer.style.height = "60px"
-        navContainer.style.position = "fixed"
-        navContainer.style.zIndex = "2"
-        navContainer.style.top = "0"
-        nav.style.width ="100%"
-        navContainer.style.transition = 'all 1.2s ease-in-out';
-        nav.style.transition = 'all 1.2s ease-in-out';
-
+    let elementoEstilo = window.getComputedStyle(visor);
+    let display= elementoEstilo.getPropertyValue("display");
+    debugger;
+    if (display == 'none') {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navContainer.style.height = "60px"
+            navContainer.style.position = "fixed"
+            navContainer.style.zIndex = "3"
+            navContainer.style.top = "0"
+            nav.style.width ="100%"
+            navContainer.style.transition = 'all 1.2s ease-in-out';
+            nav.style.transition = 'all 1.2s ease-in-out';
     }
     else {
         nav.style.width ="50%"
@@ -23,4 +25,6 @@ function animateNavBar() {
         navContainer.style.removeProperty("top")
 
     }
+    }
+    
 }
