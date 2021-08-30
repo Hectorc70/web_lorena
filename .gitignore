@@ -18,3 +18,7 @@ web/__pycache__/models.cpython-39.pyc
 web/__pycache__/views.cpython-39.pyc
 
 web/migrations/__pycache__/__init__.cpython-39.pyc
+
+web/__pycache__/
+
+web/migrations/__pycache__/
