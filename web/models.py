@@ -39,7 +39,7 @@ class InsuranceCar(models.Model):
     sex                 = models.CharField('Sexo', blank=False, max_length=10,  db_column='Sex')
     postal_code    = models.CharField('Codigo Postal', blank=False, max_length=10,  db_column='PostalCode')
     email          = models.EmailField('Correo Electronico', blank=False, max_length=48,  db_column='Email')
-    num_cel        = models.CharField('Numero de Whatsapp', blank=False, max_length=10,  db_column='NumPhone')
+    num_phone        = models.CharField('Numero de Whatsapp', blank=False, max_length=10,  db_column='NumPhone')
     comments       = models.CharField('Comentarios Adicionales', blank=True, null=False, max_length=300, db_column='Comments')
 
 
