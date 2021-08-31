@@ -71,7 +71,7 @@ class LifeInsuranceForm(forms.ModelForm):
         self.fields['marital_status'].widget.attrs.update({
             'class': 'select-field',
         })
-        self.fields['sex'].label = 'Selecciona tu Estado Civil'
+        self.fields['marital_status'].label = 'Selecciona tu Estado Civil'
 
 
         self.fields['nationality'].widget.attrs.update({
@@ -148,12 +148,14 @@ class LifeInsuranceForm(forms.ModelForm):
 
         
         self.fields['comments'].widget.attrs.update({
-            'class': 'input-field',
+            'class': 'input-field input-text-area',
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
 
 class InsuranceCarForm(forms.ModelForm):
+    other_vehicle = forms.CharField(label='Especifique', max_length=48,
+    widget=Textarea(attrs={'cols':80, 'rows':20}, ))
     class Meta:
         model = InsuranceCar
         fields = '__all__'
@@ -203,7 +205,10 @@ class InsuranceCarForm(forms.ModelForm):
             'class': 'select-field',
         }) 
         self.fields['vehicle_type'].label = 'Selecciona tu tipo de Vehículo'
-
+        
+        self.fields['other_vehicle'].widget.attrs.update({
+            'class': 'input-field input-text-area',
+        })
         self.fields['model'].widget.attrs.update({
             'class': 'input-field',
             'placeholder':'Escribe el modelo de tu vehículo',
@@ -260,7 +265,7 @@ class InsuranceCarForm(forms.ModelForm):
 
         
         self.fields['comments'].widget.attrs.update({
-            'class': 'input-field',
+            'class': 'input-field input-text-area',
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
@@ -376,6 +381,6 @@ class InsuranceHouseForm(forms.ModelForm):
 
         
         self.fields['comments'].widget.attrs.update({
-            'class': 'input-field',
+            'class': 'input-field input-text-area',
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
