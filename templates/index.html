@@ -574,8 +574,9 @@
         </form>
 
         <form id="form-house" action="" class="form">
+            {% csrf_token %}
             <div class="conte-btn-cerrar">
-                <a class="btn-cerrar" onclick="cerrarVisor('form-house')">
+                <a onclick="cerrarVisor('form-house')" class="btn-cerrar">
                     <p>X</p>
                 </a>
             </div>
@@ -585,6 +586,22 @@
                 </div>
 
                 <div class="container-forms item">
+                    <h3 class="title-form">Seguro de casa<br> Habitación</h3>
+                    <div class="container-fields">
+                        {% for field in form_insurance_house %}
+                        <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                        {{field}}
+
+                        {% endfor %}
+
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         </form>

@@ -7,5 +7,6 @@ from .forms import *
 def view_home(request):  
     form_life_insurance = LifeInsuranceForm() 
     form_insurance_car = InsuranceCarForm() 
+    form_insurance_house = InsuranceHouseForm() 
 
-    return render(request, 'index.html', {'form_life_insurance':form_life_insurance, 'form_insurance_car':form_insurance_car})
+    return render(request, 'index.html', {'form_life_insurance':form_life_insurance, 'form_insurance_car':form_insurance_car, 'form_insurance_house':form_insurance_house})

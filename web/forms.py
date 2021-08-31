@@ -263,3 +263,119 @@ class InsuranceCarForm(forms.ModelForm):
             'class': 'input-field',
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
+
+
+
+
+class InsuranceHouseForm(forms.ModelForm):
+    class Meta:
+        model = InsuranceHouse
+        fields = '__all__'
+        exclude = ['id_house']
+        widgets = {
+
+                'housing_type':forms.Select(choices=(
+                ('',''),
+                ('casa unifamiliar o en condominio horizontal','Casa Unifamiliar o en Condominio Horizontal'), 
+                ('departamento en condominio','Departamento en Condominio'), 
+                ('otro','Otros'))
+                ),
+                
+
+                'coverage_type':forms.Select(choices=(
+                ('',''),
+                ('Proteccion total','Protección Total (incendio, fenómenos meteorológicos, sismo y erupción volcánica)'), 
+                ('Proteccion Basica','Protección Básica (sólo incendio)'), 
+                ('otro','Otros'))
+                ),
+
+                'contract_type':forms.Select(choices=(
+                ('',''),
+                ('dueño o arrendador','Dueño o Arrendador'), 
+                ('arrendatario','Arrendatario'),)
+                ),
+
+                'comments':Textarea(attrs={'cols':80, 'rows':20})
+        }
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
+        self.fields['street'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu calle',
+        })
+
+        self.fields['number'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Numero',
+        })
+
+        self.fields['suburb'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Colonia',
+        })
+
+        self.fields['postal_code'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Codigo Postal',
+        })
+
+        self.fields['city'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe el Nombre de tu Ciudad',
+        })
+
+        self.fields['state'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe el Nombre de tu Estado',
+        })
+
+
+        self.fields['housing_type'].widget.attrs.update({
+            'class': 'select-field',
+        }) 
+        self.fields['housing_type'].label = 'Selecciona tu tipo de Vivienda'
+
+        self.fields['year_house'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe el Año de Construcción',
+        })
+
+        self.fields['coverage_type'].widget.attrs.update({
+            'class': 'select-field',
+        }) 
+        self.fields['coverage_type'].label = '¿Qué tipo de cobertura deseas adquirir para tu vivienda? '
+
+        self.fields['house_in_river'].widget.attrs.update({
+            'class': 'input-field',
+        })
+        self.fields['house_in_river'].label = '¿La vivienda se encuentra a menos de 250 metros de un río, canal o laguna?'
+
+        self.fields['name_full'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Nombre Completo',
+        }) 
+
+        self.fields['contract_type'].widget.attrs.update({
+            'class': 'select-field',
+        }) 
+
+        self.fields['email'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Correo Electronico',
+        })
+
+        self.fields['num_phone'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Número de Whatsapp',
+        })
+        self.fields['num_phone'].label = 'Numero de Whatsapp'
+
+        
+        self.fields['comments'].widget.attrs.update({
+            'class': 'input-field',
+        })
+        self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'

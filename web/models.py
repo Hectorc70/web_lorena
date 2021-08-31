@@ -56,7 +56,7 @@ class InsuranceHouse(models.Model):
     number          = models.CharField('Numero', blank=False, max_length=48,  db_column='Number')
     suburb          = models.CharField('Colonia', blank=False, max_length=48,  db_column='Suburb')
     postal_code     = models.CharField('Codigo Postal', blank=False, max_length=10,  db_column='PostalCode')
-    municipality    = models.CharField('Municipio', blank=False, max_length=48,  db_column='municipality')
+    city            = models.CharField('Ciudad', blank=False, max_length=48,  db_column='City')
     state           = models.CharField('Estado', blank=False, max_length=48,  db_column='State')
     housing_type    = models.CharField('Tipo de Vivienda', blank=False, max_length=48,  db_column='HousingType')
     year_house      = models.CharField('Año de construcción de vivienda', blank=False, max_length=4,  db_column='YearHouse')
