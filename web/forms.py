@@ -99,11 +99,11 @@ class LifeInsuranceForm(forms.ModelForm):
             'placeholder':'Escribe tu Correo Electronico',
         })
 
-        self.fields['Num_cel'].widget.attrs.update({
+        self.fields['num_phone'].widget.attrs.update({
             'class': 'input-field',
             'placeholder':'Escribe tu Número de Whatsapp',
         })
-        self.fields['Num_cel'].label = 'Numero de Whatsapp'
+        self.fields['num_phone'].label = 'Numero de Whatsapp'
 
         self.fields['weight'].widget.attrs.update({
             'class': 'input-field',
@@ -152,5 +152,4 @@ class LifeInsuranceForm(forms.ModelForm):
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
-       
 
