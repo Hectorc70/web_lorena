@@ -347,6 +347,7 @@ section{
     background-color: var(--color-secundario2);
     padding: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .method:hover{
