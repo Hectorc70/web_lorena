@@ -16,7 +16,7 @@
     </title>
 </head>
 
-<body id="body">
+<body id="body"> 
     <header id="header">
         <img src="{% static 'images/header.jpg' %}" alt="Imagen de dos adultos mayores">
         <nav id="nav">
@@ -506,7 +506,7 @@
 
 
     <div id="conte-view-form">
-        <form id="form-life" action="post" class="form">
+        <form id="form-life" action="" method="post" class="form">
             {% csrf_token %}
             <div class="conte-btn-cerrar">
                 <a onclick="cerrarVisor('form-life')" class="btn-cerrar">
