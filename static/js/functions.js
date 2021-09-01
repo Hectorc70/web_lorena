@@ -1,5 +1,7 @@
 'use strict'
-
+async function openWhatssap(){
+    
+}
 async function ViewForm(id_form) {
     deshabilitar('header');
     deshabilitar('section-home');
