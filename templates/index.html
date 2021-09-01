@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="title-service">
-                    <p>Seguro de de autos y automoviles</p>
+                    <p>Seguro de de autos y motocicletas</p>
                 </div>
             </a>
             <div class="border-separator"></div>
@@ -169,7 +169,7 @@
                     </svg>
                 </div>
                 <div class="title-service ">
-                    <p>Seguro de casa habitacón</p>
+                    <p>Seguro de casa habitación</p>
                 </div>
             </a>
         </div>
@@ -506,7 +506,7 @@
 
 
     <div id="conte-view-form">
-        <form id="form-life" action="" class="form">
+        <form id="form-life" action="post" class="form">
             {% csrf_token %}
             <div class="conte-btn-cerrar">
                 <a onclick="cerrarVisor('form-life')" class="btn-cerrar">
@@ -522,29 +522,30 @@
                     <h3 class="title-form">Seguro de Vida,<br> Ahorro e Inversion</h3>
                     <div class="container-fields">
                         {% for field in form_life_insurance %}
-                        <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
-                    
-                    {{field}}
 
-                    {% endfor %}
-                    
-                <div id="container-button">
-                    <button class="button-submit" type="submit">
-                        Enviar
-                    </button>
-                </div>
+                        <div class="container-field">
+                            <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                            {{field}}
+                        </div>
+                        {% endfor %}
+
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
 
 
                     </div>
-                    
                 </div>
             </div>
 
         </form>
 
-        <form id="form-car" action="" class="form">
+        <form id="form-car" action="post" class="form">
+            {% csrf_token %}
             <div class="conte-btn-cerrar">
-                <a class="btn-cerrar" onclick="cerrarVisor('form-car')">
+                <a onclick="cerrarVisor('form-car')" class="btn-cerrar">
                     <p>X</p>
                 </a>
             </div>
@@ -554,14 +555,40 @@
                 </div>
 
                 <div class="container-forms item">
+                    <h3 class="title-form">Seguro de Autos<br> y Motocicletas</h3>
+                    <div class="container-fields">
+                        {% for field in form_insurance_car %}
+                        {% if field == vehicle_type %}
+                            <div class="container-field">
+                                <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                                {{field}}
+                                {{form_insurance_car.other_vehicle}}
+                            </div>
+                        
+                        {% else %}
+                        <div class="container-field">
+                            <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                            {{field}}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
+                        
+                        
 
+                    </div>
                 </div>
             </div>
         </form>
 
-        <form id="form-house" action="" class="form">
+        <form id="form-house" action="post" class="form">
+            {% csrf_token %}
             <div class="conte-btn-cerrar">
-                <a class="btn-cerrar" onclick="cerrarVisor('form-house')">
+                <a onclick="cerrarVisor('form-house')" class="btn-cerrar">
                     <p>X</p>
                 </a>
             </div>
@@ -571,6 +598,25 @@
                 </div>
 
                 <div class="container-forms item">
+                    <h3 class="title-form">Seguro de casa<br> Habitación</h3>
+                    <div class="container-fields">
+                        {% for field in form_insurance_house %}
+                        <div class="container-field">
+                            <label class="labe-field" for="{{field.label}}">{{ field.label}}</label>
+                            {{field}}
+                        </div>
+
+
+                        {% endfor %}
+
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         </form>

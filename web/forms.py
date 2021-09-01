@@ -2,7 +2,7 @@ from django import forms
 from django.forms import widgets
 from django.forms import Textarea
 
-from .models import LifeInsurance
+from .models import *
 
 
 class DateTimeInput(forms.DateInput):
@@ -60,16 +60,18 @@ class LifeInsuranceForm(forms.ModelForm):
             'type':'datetime-local',
             'placeholder':'Selecciona tu fecha de nacimiento',
         })
+        self.fields['date_of_birth'].label = 'Selecciona tu Fecha de Nacimiento'
 
         self.fields['sex'].widget.attrs.update({
             'class': 'select-field',
-            'placeholder':'Selecciona tu Sexo',
         })
+
+        self.fields['sex'].label = 'Selecciona tu Sexo'
 
         self.fields['marital_status'].widget.attrs.update({
             'class': 'select-field',
-            'placeholder':'Selecciona tu Estado Civil',
         })
+        self.fields['marital_status'].label = 'Selecciona tu Estado Civil'
 
 
         self.fields['nationality'].widget.attrs.update({
@@ -99,11 +101,11 @@ class LifeInsuranceForm(forms.ModelForm):
             'placeholder':'Escribe tu Correo Electronico',
         })
 
-        self.fields['Num_cel'].widget.attrs.update({
+        self.fields['num_phone'].widget.attrs.update({
             'class': 'input-field',
             'placeholder':'Escribe tu Número de Whatsapp',
         })
-        self.fields['Num_cel'].label = 'Numero de Whatsapp'
+        self.fields['num_phone'].label = 'Numero de Whatsapp'
 
         self.fields['weight'].widget.attrs.update({
             'class': 'input-field',
@@ -118,8 +120,6 @@ class LifeInsuranceForm(forms.ModelForm):
         })
 
         self.fields['height'].label = 'Estatura'
-
-      
 
         self.fields['smoker'].widget.attrs.update({
             'class': 'input-field',
@@ -148,9 +148,239 @@ class LifeInsuranceForm(forms.ModelForm):
 
         
         self.fields['comments'].widget.attrs.update({
-            'class': 'input-field',
+            'class': 'input-field input-text-area',
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
-       
 
+class InsuranceCarForm(forms.ModelForm):
+    other_vehicle = forms.CharField(label='Especifique', max_length=48,
+    widget=Textarea(attrs={'cols':80, 'rows':20}, ))
+    class Meta:
+        model = InsuranceCar
+        fields = '__all__'
+        exclude = ['id_car']
+        widgets = {
+
+                'vehicle_type':forms.Select(choices=(
+                ('',''),
+                ('automovil','Automóvil'), 
+                ('automovil','Motocicleta'), 
+                ('otro','Otros'))
+                ),
+                
+                'description_vehicle':Textarea(attrs={'cols':80, 'rows':20}),
+
+                'coverage_type':forms.Select(choices=(
+                ('',''),
+                ('amplia','Amplia'), 
+                ('limitada','Limitada'), 
+                ('responsabilidad civil','Responsabilidad Civil'))
+                ),
+
+                'coverage_optional':forms.Select(choices=(
+                ('',''),
+                ('responsabilidad civil por fallecimiento','Responsabilidad Civil por Fallecimiento'), 
+                ('siempre en agencia','Siempre en Agencia'), 
+                ('robo parcial','Robo Parcial'),
+                ('auto sustituto','Auto Sustituto'),
+                ('otro','Otros')
+                )),
+
+                'date_of_birth':DateTimeInput(),
+
+                'sex':forms.Select(choices=(('',''),('masculino','Masculino'), 
+                ('femenino','Femenino'), 
+                ('sin especificar','Sin Especificar'))
+                ),
+
+                'comments':Textarea(attrs={'cols':80, 'rows':20})
+        }
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['vehicle_type'].widget.attrs.update({
+            'class': 'select-field',
+        }) 
+        self.fields['vehicle_type'].label = 'Selecciona tu tipo de Vehículo'
+        
+        self.fields['other_vehicle'].widget.attrs.update({
+            'class': 'input-field input-text-area',
+        })
+        self.fields['model'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe el modelo de tu vehículo',
+        })
+
+        self.fields['description_vehicle'].widget.attrs.update({
+            'class': 'input-field',
+        })
+        self.fields['description_vehicle'].label = 'Escribe la Descripción de tu vehículo (marca, tipo, versión, características especiales, placa o NIV)'
+
+        self.fields['coverage_type'].widget.attrs.update({
+            'class': 'select-field',
+        })
+        self.fields['coverage_type'].label = 'Selecciona el Tipo de Cobertura'
+
+        self.fields['coverage_optional'].widget.attrs.update({
+            'class': 'select-field',
+        })
+        self.fields['coverage_optional'].label = 'Selecciona el Tipo de Cobertura Opcional'
+
+        self.fields['name_full'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Nombre Completo',
+        }) 
+
+        
+        self.fields['date_of_birth'].widget.attrs.update({
+            'class': 'input-field',
+            'type':'datetime-local',
+        })
+
+        self.fields['date_of_birth'].label = 'Selecciona tu Fecha de Nacimiento'
+        
+        self.fields['sex'].widget.attrs.update({
+            'class': 'select-field',
+        })
+        self.fields['sex'].label = 'Selecciona tu Sexo'
+
+        self.fields['postal_code'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Codigo Postal',
+        })
+
+        self.fields['email'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Correo Electronico',
+        })
+
+        self.fields['num_phone'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Número de Whatsapp',
+        })
+        self.fields['num_phone'].label = 'Numero de Whatsapp'
+
+        
+        self.fields['comments'].widget.attrs.update({
+            'class': 'input-field input-text-area',
+        })
+        self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
+
+
+
+
+class InsuranceHouseForm(forms.ModelForm):
+    class Meta:
+        model = InsuranceHouse
+        fields = '__all__'
+        exclude = ['id_house']
+        widgets = {
+
+                'housing_type':forms.Select(choices=(
+                ('',''),
+                ('casa unifamiliar o en condominio horizontal','Casa Unifamiliar o en Condominio Horizontal'), 
+                ('departamento en condominio','Departamento en Condominio'), 
+                ('otro','Otros'))
+                ),
+                
+
+                'coverage_type':forms.Select(choices=(
+                ('',''),
+                ('Proteccion total','Protección Total (incendio, fenómenos meteorológicos, sismo y erupción volcánica)'), 
+                ('Proteccion Basica','Protección Básica (sólo incendio)'), 
+                ('otro','Otros'))
+                ),
+
+                'contract_type':forms.Select(choices=(
+                ('',''),
+                ('dueño o arrendador','Dueño o Arrendador'), 
+                ('arrendatario','Arrendatario'),)
+                ),
+
+                'comments':Textarea(attrs={'cols':80, 'rows':20})
+        }
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
+        self.fields['street'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu calle',
+        })
+
+        self.fields['number'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Numero',
+        })
+
+        self.fields['suburb'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Colonia',
+        })
+
+        self.fields['postal_code'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Codigo Postal',
+        })
+
+        self.fields['city'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe el Nombre de tu Ciudad',
+        })
+
+        self.fields['state'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe el Nombre de tu Estado',
+        })
+
+
+        self.fields['housing_type'].widget.attrs.update({
+            'class': 'select-field',
+        }) 
+        self.fields['housing_type'].label = 'Selecciona tu tipo de Vivienda'
+
+        self.fields['year_house'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe el Año de Construcción',
+        })
+
+        self.fields['coverage_type'].widget.attrs.update({
+            'class': 'select-field',
+        }) 
+        self.fields['coverage_type'].label = '¿Qué tipo de cobertura deseas adquirir para tu vivienda? '
+
+        self.fields['house_in_river'].widget.attrs.update({
+            'class': 'input-field',
+        })
+        self.fields['house_in_river'].label = '¿La vivienda se encuentra a menos de 250 metros de un río, canal o laguna?'
+
+        self.fields['name_full'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Nombre Completo',
+        }) 
+
+        self.fields['contract_type'].widget.attrs.update({
+            'class': 'select-field',
+        }) 
+
+        self.fields['email'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Correo Electronico',
+        })
+
+        self.fields['num_phone'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Número de Whatsapp',
+        })
+        self.fields['num_phone'].label = 'Numero de Whatsapp'
+
+        
+        self.fields['comments'].widget.attrs.update({
+            'class': 'input-field input-text-area',
+        })
+        self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
