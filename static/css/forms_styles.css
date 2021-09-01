@@ -1,0 +1,246 @@
+
+#conte-view-form{
+    display: none;
+    position: fixed;
+    z-index: 3;
+    visibility: hidden;
+    padding: 0px;
+    padding-right: 10px;
+    width: 0%;
+    height: 0%;
+    margin: 0px auto;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    border-radius: .5em;
+    background-color:var(--color-secundario2);
+    box-shadow:0px 0px 20px 2px var(--color-sombra-cards);  
+}
+
+
+.form{
+    display: none;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.conte-btn-cerrar{
+    position: absolute;
+    right: 0px;
+    width:50%;
+    height: 30px;
+}
+
+.conte-btn-cerrar .btn-cerrar{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+
+.conte-btn-cerrar .btn-cerrar p {
+    padding: 0px;
+    margin: 0px;
+    color: var(--color-principal);
+    font-family: 'Arial';
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.conte-btn-cerrar .btn-cerrar:hover p{
+    color: #800000;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.conte-btn-cerrar .btn-cerrar p{
+    transition: all 0.5s ease-in-out;
+}
+
+
+.form .item{
+    width: 50%;
+    height: 100%;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-right: 1px;
+    align-items: center;
+
+}
+
+.container-photo-form{
+    display: block;
+    background-color: var(--color-principal);
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+}
+
+.container-photo-form img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 50%;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+}
+
+.container-forms{
+    display: block;
+    width: 100%;
+    height: 80%;
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-bottom: 50px;
+}
+
+.title-form{
+    text-align: left;
+    margin-top: 50px;
+    font-family: 'Poppins-Bold';
+    font-size: 1.5rem;
+    color: var(--color-principal);
+}
+
+.container-fields{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    overflow:auto;
+    padding-right: 10px;
+}
+
+.container-field{
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.container-field-check{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+/* CAMPOS Y LABELS */
+.labe-field{
+    color: var(--color-principal);
+    font-size: 1.0rem;
+}
+
+.input-field{
+    display: block;
+    background-color: var(--color-contenedor);
+    width: 95%;
+    height: 22px;
+    padding: 2px;
+    padding-left: 10px;
+    border-radius: .3em;
+    text-align: left; 
+    color: var(--color-principal);
+    font-size: .9rem;
+    font-weight: bold;
+    border: none
+    /* border: 2px solid var(--color-secundario); */
+}
+.input-field:hover{
+    background-color: #eaf0f5;
+}
+
+.input-field::placeholder{
+    color: var(--color-texto);
+    font-size: .8rem;
+    font-family: 'Poppins';
+    font-weight:100
+}
+input:focus{
+    outline: none;
+    outline-width: 0;
+    
+}
+
+
+.select-field{
+    display:block;
+    width: 98%;
+    padding: 2px;
+    height:25px;
+    background-color: var(--color-secundario3);
+    font-size: .9rem;
+    font-weight: bold;
+    border: none;
+    padding-left: 10px;
+    border-radius: .3em;
+    text-align: left; 
+    color: var(--color-principal);
+}
+
+select:focus{
+    outline: none;
+    outline-width: 0;
+    
+}
+
+.select-field:hover{
+    background-color: #eaf0f5;
+}
+.input-text-area{
+    height: 50px;
+}
+
+.field-no-visible{
+    display: none;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+.input-text-area:focus{
+    outline: none;
+    outline-width: 0;
+}
+#container-button{
+    display: block;
+    width: 80%;
+    margin: 50px auto 50px  auto;
+}
+.button-submit{
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: var(--color-secundario2);
+    background-color: var(--color-principal);
+    border-radius: .5em ; 
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+
+.button-submit:hover{
+    background-color: #02304D;
+    box-shadow: 0px 3px 10px 0px var(--color-contenedor);
+}

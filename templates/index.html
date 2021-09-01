@@ -8,13 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms_styles.css' %}">
     <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
     <title>
         Inicio
     </title>
 </head>
 
-<body>
+<body id="body">
     <header id="header">
         <img src="{% static 'images/header.jpg' %}" alt="Imagen de dos adultos mayores">
         <nav id="nav">
@@ -36,7 +38,7 @@
 
     <section id="section-home">
         <div id="container-options-services">
-            <a class="option-service">
+            <a class="option-service" onclick="ViewForm('form-life')">
                 <div class="conte-icon">
                     <svg class="icon-primary" viewBox="0 -28 512.00002 512" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -53,7 +55,7 @@
                 </div>
             </a>
             <div class="border-separator"></div>
-            <a class="option-service">
+            <a class="option-service" onclick="ViewForm('form-car')">
                 <div class="conte-icon">
                     <svg class="icon-primary" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 394.648 394.648"
@@ -111,11 +113,11 @@
                 </div>
 
                 <div class="title-service">
-                    <p>Seguro de de autos y automoviles</p>
+                    <p>Seguro de de autos y motocicletas</p>
                 </div>
             </a>
             <div class="border-separator"></div>
-            <a class="last-item option-service ">
+            <a class="last-item option-service" onclick="ViewForm('form-house')">
                 <div class="conte-icon">
                     <svg class="icon-primary" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 306.773 306.773"
@@ -167,7 +169,7 @@
                     </svg>
                 </div>
                 <div class="title-service ">
-                    <p>Seguro de casa habitacón</p>
+                    <p>Seguro de casa habitación</p>
                 </div>
             </a>
         </div>
@@ -206,7 +208,7 @@
             <div id="container-contact">
                 <h2 class="title-section">Medios por donde podemos conversar</h2>
                 <div id="container-methods-contact">
-                    <a class="method">
+                    <a class="method" onclick="javascript: window.location.href='mailto:lcastro1274@gmail.com';">
                         <svg class="icon-method" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                             style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -258,7 +260,7 @@
                         <p class="description-method">Enviame un
                             Correo Electronico</p>
                     </a>
-                    <a class="method">
+                    <a  href="tel:2221255927" class="method">
                         <svg class="icon-method" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480.56 480.56"
                             style="enable-background:new 0 0 480.56 480.56;" xml:space="preserve">
@@ -311,7 +313,7 @@
 
                         <p class="description-method">Llamamame</p>
                     </a>
-                    <a class="method">
+                    <a target="blanck" class="method" href="https://api.whatsapp.com/send?phone=5212221255927&text=Hola">
                         <svg class="icon-method" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                             style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -388,11 +390,11 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="footer">
         <div id="container-footer">
             <p class="title-social-networks">Redes Sociales</p>
             <div id="container-social-neworks">
-                <a class="social-network">
+                <a target="blanck" href="https://www.facebook.com/lorenacastroagentedeseguros" class="social-network">
                     <svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
                         style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -435,7 +437,7 @@
                     </svg>
                 </a>
 
-                <a class="social-network">
+                <a target="blanck" href="https://www.linkedin.com/in/lorena-c-8621703b/" class="social-network">
                     <svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 504.4 504.4"
                         style="enable-background:new 0 0 504.4 504.4;" xml:space="preserve">
@@ -501,15 +503,146 @@
         </div>
 
     </footer>
+
+
+    <div id="conte-view-form">
+        <form id="form-life" action="post" class="form">
+            {% csrf_token %}
+            <div class="conte-btn-cerrar">
+                <a onclick="cerrarVisor('form-life')" class="btn-cerrar">
+                    <p>X</p>
+                </a>
+            </div>
+            <div class="container">
+                <div class="container-photo-form item">
+                    <img src="{% static 'images/image-life.jpg' %}" alt="Imagen de pareja sonriendo felicidad">
+                </div>
+
+                <div class="container-forms item">
+                    <h3 class="title-form">Seguro de Vida,<br> Ahorro e Inversion</h3>
+                    <div class="container-fields">
+                        {% for field in form_life_insurance %}
+
+                        <div class="container-field">
+                            <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                            {{field}}
+                        </div>
+                        {% endfor %}
+
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <form id="form-car" action="post" class="form">
+            {% csrf_token %}
+            <div class="conte-btn-cerrar">
+                <a onclick="cerrarVisor('form-car')" class="btn-cerrar">
+                    <p>X</p>
+                </a>
+            </div>
+            <div class="container">
+                <div class="container-photo-form item">
+                    <img src="{% static 'images/car.jpg' %}" alt="Imagen de pareja sonriendo felicidad">
+                </div>
+
+                <div class="container-forms item">
+                    <h3 class="title-form">Seguro de Autos<br> y Motocicletas</h3>
+                    <div class="container-fields">
+                        {% for field in form_insurance_car %}
+                        {% if field == vehicle_type %}
+                            <div class="container-field">
+                                <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                                {{field}}
+                                {{form_insurance_car.other_vehicle}}
+                            </div>
+                        
+                        {% else %}
+                        <div class="container-field">
+                            <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                            {{field}}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
+                        
+                        
+
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form id="form-house" action="post" class="form">
+            {% csrf_token %}
+            <div class="conte-btn-cerrar">
+                <a onclick="cerrarVisor('form-house')" class="btn-cerrar">
+                    <p>X</p>
+                </a>
+            </div>
+            <div class="container">
+                <div class="container-photo-form item">
+                    <img src="{% static 'images/house.jpg' %}" alt="Imagen de pareja sonriendo felicidad">
+                </div>
+
+                <div class="container-forms item">
+                    <h3 class="title-form">Seguro de casa<br> Habitación</h3>
+                    <div class="container-fields">
+                        {% for field in form_insurance_house %}
+                        <div class="container-field">
+                            <label class="labe-field" for="{{field.label}}">{{ field.label}}</label>
+                            {{field}}
+                        </div>
+
+
+                        {% endfor %}
+
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
     <script type="text/javascript">
+
+
+
         window.onscroll = function () {
+
+
             animateNavBar();
+
+
         };
 
         window.top = function () {
+
             animateNavBar();
+
+
         };
-        
+
+
+
     </script>
 </body>
 
