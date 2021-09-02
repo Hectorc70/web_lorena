@@ -1,7 +1,7 @@
 
 import os
-from web_project.settings.dev import *
-#from web_project.settings.prod import *
+#from web_project.settings.dev import *
+from web_project.settings.prod import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 
