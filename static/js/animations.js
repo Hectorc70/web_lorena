@@ -7,7 +7,6 @@ async function animateNavBar() {
     var nav = document.getElementById("nav-bar");
     let elementoEstilo = window.getComputedStyle(visor);
     let display= elementoEstilo.getPropertyValue("display");
-    debugger;
     if (display == 'none') {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
             navContainer.style.height = "60px"
