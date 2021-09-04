@@ -10,14 +10,24 @@ async function ViewForm(id_form) {
     let visor = document.getElementById('conte-view-form')
     let btn = document.getElementById('btn-cerrar')
     let form = document.getElementById(id_form);
+    let tam = tamVentana();
+    let widthContainerForm = '50%';
     
+    debugger;
+    if (tam[0] <=1116){
+        widthContainerForm = '80%';
+    }
+
+    else if (tam[0] <=600){
+        widthContainerForm = '100%';
+    }
     form.style.display = "block";
     form.style.visibility = "visible";
     form.style.width = '100%';
     form.style.height = '100%';
     visor.style.display = "block";
     visor.style.visibility = "visible";
-    visor.style.width = '50%';
+    visor.style.width = widthContainerForm;
     visor.style.height = '80%';
     visor.style.transition = 'all 0.5s ease-in-out';
     btn.style.display = 'flex';
@@ -71,4 +81,28 @@ function habilitar(elemento) {
 
 
 
+}
+
+function tamVentana() {
+    var tam = [0, 0];
+    if (typeof window.innerWidth != 'undefined')
+    {
+      tam = [window.innerWidth,window.innerHeight];
+    }
+    else if (typeof document.documentElement != 'undefined'
+        && typeof document.documentElement.clientWidth !=
+        'undefined' && document.documentElement.clientWidth != 0)
+    {
+      tam = [
+          document.documentElement.clientWidth,
+          document.documentElement.clientHeight
+      ];
+    }
+    else   {
+      tam = [
+          document.getElementsByTagName('body')[0].clientWidth,
+          document.getElementsByTagName('body')[0].clientHeight
+      ];
+    }
+    return tam;
 }
