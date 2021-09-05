@@ -11,16 +11,22 @@ async function ViewForm(id_form) {
     let btn = document.getElementById('btn-cerrar')
     let form = document.getElementById(id_form);
     let tam = tamVentana();
-    let widthContainerForm = '50%';
+    let widthContainerForm = '100%';
+    let heighContainerForm = '100%';
     
     debugger;
-    if (tam[0] <=1116){
+    if (tam[0] > 1116){
+        widthContainerForm = '50%';
+    }
+    
+    else if (tam[0] <=1116 && tam[0] > 600){
         widthContainerForm = '80%';
     }
-
+    
     else if (tam[0] <=600){
-        widthContainerForm = '100%';
+        widthContainerForm = '95%';
     }
+    
     form.style.display = "block";
     form.style.visibility = "visible";
     form.style.width = '100%';
