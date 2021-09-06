@@ -152,8 +152,8 @@ class LifeInsuranceForm(forms.ModelForm):
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
-class FormCar(forms.Form):
-    vehicle_type  = forms.Select(label='Tipo de Vehículo')
+""" class FormCar(forms.Form):
+    vehicle_type  = forms.Select(label='Tipo de Vehículo') """
 
 class InsuranceCarForm(forms.ModelForm):
     other_vehicle = forms.CharField(label='Especifique', max_length=48,
