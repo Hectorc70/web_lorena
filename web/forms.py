@@ -152,6 +152,8 @@ class LifeInsuranceForm(forms.ModelForm):
         })
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
+""" class FormCar(forms.Form):
+    vehicle_type  = forms.Select(label='Tipo de Vehículo') """
 
 class InsuranceCarForm(forms.ModelForm):
     other_vehicle = forms.CharField(label='Especifique', max_length=48,
@@ -215,7 +217,7 @@ class InsuranceCarForm(forms.ModelForm):
         })
 
         self.fields['description_vehicle'].widget.attrs.update({
-            'class': 'input-field',
+            'class': 'input-field input-text-area',
         })
         self.fields['description_vehicle'].label = 'Escribe la Descripción de tu vehículo (marca, tipo, versión, características especiales, placa o NIV)'
 
