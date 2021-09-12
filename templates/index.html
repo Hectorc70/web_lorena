@@ -486,6 +486,41 @@
 
 
     <div id="conte-view-form">
+        <form id="form-medical" action="" method="post" class="form">
+            {% csrf_token %}
+            <div class="conte-btn-cerrar">
+                <a onclick="cerrarVisor('form-medical')" class="btn-cerrar">
+                    <p>X</p>
+                </a>
+            </div>
+            <div class="container">
+                <div class="container-photo-form item">
+                    <img src="{% static 'images/image-life.jpg' %}" alt="Imagen de pareja sonriendo felicidad">
+                </div>
+
+                <div class="container-forms item">
+                    <h3 class="title-form">Seguro de Vida,<br> Ahorro e Inversion</h3>
+                    <div class="container-fields">
+                        {% for field in form_life_insurance %}
+
+                        <div class="container-field">
+                            <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
+                            {{field}}
+                        </div>
+                        {% endfor %}
+
+                        <div id="container-button">
+                            <button class="button-submit" type="submit">
+                                Enviar
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
         <form id="form-life" action="" method="post" class="form">
             {% csrf_token %}
             <div class="conte-btn-cerrar">
