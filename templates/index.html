@@ -7,11 +7,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.3.5/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/forms_styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/alerts.js' %}"></script>
     <title>
         Inicio
     </title>
@@ -34,6 +36,30 @@
                 </li>
             </ul>
         </nav>
+        {% if messages %}
+       <!--  <div class="prueba">{{messages.length}}</div> -->
+        <div id="container-messages">
+            {% for mensaje in messages %}
+
+            {% if mensaje.tags == 'success' %}
+            <div id="btn-msg-ok"  class="message green">
+                <a onclick="closeMessage('btn-msg-ok')" class="btn-cerrar" ><p>X</p></a>
+                <div class="text-msg">{{mensaje}}</div>
+            </div>        
+            {% endif %}
+            {% if mensaje.tags == 'error' %}
+            <div id="btn-msg-e"  class="message red">
+                <a onclick="closeMessage('btn-msg-e')" class="btn-cerrar" ><p>X</p></a>
+                <div class="text-msg">{{mensaje}}</div>
+            </div>        
+            {% endif %}
+
+        {% endfor%}
+        </div>
+        
+        
+    {% endif %}    
+        
     </header>
 
 

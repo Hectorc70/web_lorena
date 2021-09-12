@@ -54,9 +54,13 @@ def view_home(request):
             mount_year=mount_year,
             comments=comments,
         )
-        form.save()
-        messages.success(
-            request, 'Informacion enviada sera contactado en breve')
+        try:
+            form.save()
+            messages.success(
+                request, 'Informacion enviada sera contactado en breve')
+        except :
+            messages.error(
+                request, 'Error al guardar Datos')
 
     elif request.method == 'POST' and form_car.is_valid():
         vehicle_type = form_car.cleaned_data.get('vehicle_type')
@@ -82,13 +86,12 @@ def view_home(request):
             num_phone=num_phone,
             comments=comments,
         )
+        try:
+            form.save()
+            messages.success(
+                request, 'Informacion enviada sera contactado en breve')
+        except :
+            messages.error(
+                request, 'Error al guardar Datos')
 
-        form.save()
-        messages.success(
-            request, 'Informacion enviada sera contactado en breve')
-
-    else:
-        messages.error(request, 'Registro No Guardado')
-
-    #import pdb; pdb.set_trace()
     return render(request, 'index.html', {'form_life_insurance': form_life_insurance, 'form_insurance_car': form_insurance_car, 'form_insurance_house': form_insurance_house})

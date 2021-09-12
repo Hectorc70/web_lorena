@@ -1,4 +1,14 @@
 'use strict'
+
+
+async function closeMessage(id) {
+    let conteMSG = document.getElementById(id);
+    conteMSG.style.display = 'none';
+    conteMSG.style.visibility = 'hidden';
+
+}
+
+
 async function openWhatssap(){
     
 }
