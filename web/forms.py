@@ -8,6 +8,124 @@ from .models import *
 class DateTimeInput(forms.DateInput):
     input_type = 'date'
 
+class MedicalExpensesForm(forms.ModelForm):
+    class Meta:
+        model = MedicalExpenses
+        fields = '__all__'
+        exclude = ['id_e']
+        widgets = {
+                'date_of_birth':DateTimeInput(),
+
+                'sex':forms.Select(choices=(('',''),('masculino','Masculino'), 
+                ('femenino','Femenino'), 
+                ('sin especificar','Sin Especificar'))
+                ),
+
+                'marital_status':forms.Select(choices=(('',''),('solter@','Solter@'), 
+                ('casado','Casad@'), ('divorciad@','Divorciad@'), ('viud@','Viud@'),
+                ('concubinato','Concubinato')
+                )),
+
+                'comments':Textarea(attrs={'cols':80, 'rows':20})
+        }
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['name_full'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe Tu Nombre Completo',
+        }) 
+        self.fields['name_full'].label = 'Nombre Completo'
+
+
+        self.fields['date_of_birth'].widget.attrs.update({
+            'class': 'input-field',
+            'type':'datetime-local',
+            'placeholder':'Selecciona tu fecha de nacimiento',
+        })
+        self.fields['date_of_birth'].label = 'Selecciona tu Fecha de Nacimiento'
+
+        self.fields['sex'].widget.attrs.update({
+            'class': 'select-field',
+        })
+
+        self.fields['sex'].label = 'Selecciona tu Sexo'
+
+        self.fields['marital_status'].widget.attrs.update({
+            'class': 'select-field',
+        })
+        self.fields['marital_status'].label = 'Selecciona tu Estado Civil'
+
+
+        self.fields['nationality'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Tu nacionalidad',
+        })
+
+        
+        self.fields['profession'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Profesión o Ocupación',
+        })
+
+        self.fields['postal_code'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Codigo Postal',
+        })
+
+        self.fields['address'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Direccion calle, numero, colonia',
+        })
+
+        
+        self.fields['email'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Correo Electronico',
+        })
+
+        self.fields['num_phone'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Número de Whatsapp',
+        })
+        self.fields['num_phone'].label = 'Numero de Whatsapp'
+
+        self.fields['weight'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Peso',
+        })
+        self.fields['weight'].label = 'Peso'
+
+
+        self.fields['height'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder':'Escribe tu Estatura',
+        })
+
+        self.fields['height'].label = 'Estatura'
+
+
+        self.fields['parentDiabetes'].widget.attrs.update({
+            'class': 'input-field',
+        })
+
+        self.fields['parentDiabetes'].label = '¿Alguno de tus padres, hermanos, tíos o abuelos ha padecido diabetes?'
+
+        self.fields['sick'].widget.attrs.update({
+            'class': 'input-field',
+        })
+
+        self.fields['sick'].label = '.- ¿Tienes o has padecido alguna enfermedad importante o te encuentras en algún tratamiento?'
+
+        
+        self.fields['comments'].widget.attrs.update({
+            'class': 'input-field input-text-area',
+        })
+        self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
+
+
 class LifeInsuranceForm(forms.ModelForm):
     class Meta:
         model = LifeInsurance

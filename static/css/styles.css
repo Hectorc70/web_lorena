@@ -123,6 +123,68 @@ body{
     border-right: .2em solid var(--color-principal) ;
 }
 
+/* ESTILOS DE MENSAJES  */
+#container-messages{
+    position: absolute;
+    top: 100px;
+    right: 40px;
+}
+#container-messages .message {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    min-height: 80px;
+    font-family: 'Poppins-Bold';
+    padding: 5px;
+    color: white;
+    border-radius: .5rem;
+    z-index: 4;
+}
+
+
+#container-messages .red{
+    background-color: #f18d80;
+}
+
+
+#container-messages .green{
+    background-color: var(--color-secundario);
+}
+
+#container-messages .btn-cerrar{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+
+#container-messages .btn-cerrar p {
+    padding: 0px;
+    margin: 0px;
+    color: var(--color-secundario2);
+    font-family: 'Arial';
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#container-messages .btn-cerrar:hover p{
+    color: #800000;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: all 0.5s ease-in-out;
+
+}
+
+#container-messages  .btn-cerrar p{
+    transition: all 0.5s ease-in-out;
+}
+
+
+.text-msg{
+    margin-top: 30px;
+}
 
 
 /*  SECTIONS */
@@ -151,7 +213,7 @@ section{
     top: -60px;
     flex-direction: row;
     justify-content: space-around;
-    width: 30%;
+    width: 40%;
     height: 120px;
     padding-top: 10px;
     padding-bottom: 10px;
