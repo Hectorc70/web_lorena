@@ -137,4 +137,8 @@ def view_home(request):
             messages.error(
                 request, 'Error al guardar Datos')
 
-    return render(request, 'index.html', {'form_life_insurance': form_life_insurance, 'form_insurance_car': form_insurance_car, 'form_insurance_house': form_insurance_house})
+    return render(request, 'index.html', {
+        'form_medical_expenses':form_medical_expenses,
+        'form_life_insurance': form_life_insurance, 
+        'form_insurance_car': form_insurance_car, 
+        'form_insurance_house': form_insurance_house})
