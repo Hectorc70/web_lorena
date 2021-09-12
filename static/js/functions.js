@@ -24,7 +24,6 @@ async function ViewForm(id_form) {
     let widthContainerForm = '100%';
     let heighContainerForm = '100%';
     
-    debugger;
     if (tam[0] > 1116){
         widthContainerForm = '50%';
     }
