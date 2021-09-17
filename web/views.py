@@ -142,3 +142,8 @@ def view_home(request):
         'form_life_insurance': form_life_insurance, 
         'form_insurance_car': form_insurance_car, 
         'form_insurance_house': form_insurance_house})
+
+
+def view_creditos(request):
+
+    return render(request, 'creditos.html',{})
