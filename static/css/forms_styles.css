@@ -126,7 +126,7 @@
 .container-field{
     display: block;
     width: 100%;
-    height: 100px;
+    padding: 0px 0px 5px 0px;
     margin-bottom: 10px;
 }
 
@@ -162,6 +162,17 @@
     font-weight: bold;
     border: none
     /* border: 2px solid var(--color-secundario); */
+}
+.input-field-checkBox{
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    border-radius: .3em;
+    color: var(--color-principal);
+    font-size: .9rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 .input-field:hover{
     background-color: #eaf0f5;
@@ -208,6 +219,29 @@ select:focus{
     height: 50px;
 }
 
+
+.multiple-check{
+    display: block;
+    font-size: .9rem;
+    font-weight: bold;
+    border: none;
+    color: var(--color-principal);
+}
+
+.multiple-check li label input{
+    display: inline;
+    background-color: var(--color-contenedor);
+    padding: 2px;
+    padding-left: 10px;
+    border-radius: .3em;
+    text-align: left; 
+    color: var(--color-principal);
+    font-size: .9rem;
+    font-weight: bold;
+    border: none
+}
+
+
 .field-no-visible{
     display: none;
     margin-top: 10px;
@@ -242,4 +276,25 @@ select:focus{
 .button-submit:hover{
     background-color: #02304D;
     box-shadow: 0px 3px 10px 0px var(--color-contenedor);
+}
+
+/* Uniques */
+#other_vehicle_type{
+    display: none;
+    visibility: hidden;
+}
+
+#coverage_other{
+    display: none;
+    visibility: hidden;
+}
+
+#id_housing_type_other{
+    display: none;
+    visibility: hidden;
+}
+
+#id_coverage_type_other{
+    display: none;
+    visibility: hidden;
 }
