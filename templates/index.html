@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/forms_styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}" type="text/javascript"></script>
     <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/alerts.js' %}"></script>
@@ -596,8 +597,7 @@
 
             </div>
             <div id="container-copyright">
-                <a a target="blanck" class="link important"
-                href="https://hectorgarciadev.online/">Desarrollador</a>
+                <a a target="blanck" class="link important" href="https://hectorgarciadev.online/">Desarrollador</a>
                 <a target="blanck" class="link" href="/creditos/"> | Creditos | </a>
                 <a target="blanck" class="link" href=""> Politica de Privacidad</a>
 
@@ -696,19 +696,10 @@
                     <h3 class="title-form">Seguro de Autos<br> y Motocicletas</h3>
                     <div class="container-fields">
                         {% for field in form_insurance_car %}
-                        {% if field == vehicle_type %}
-                        <div class="container-field">
-                            <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
-                            {{field}}
-                            {{form_insurance_car.other_vehicle}}
-                        </div>
-
-                        {% else %}
                         <div class="container-field">
                             <label class="labe-field" for="{{field.label}}">{{ field.label }}</label>
                             {{field}}
                         </div>
-                        {% endif %}
                         {% endfor %}
                         <div id="container-button">
                             <button class="button-submit" type="submit">
@@ -761,22 +752,34 @@
 
     </div>
     <script type="text/javascript">
-
+        $("#id_coverage_optional_4" ).change(function () {   
+            if($("#id_coverage_optional_4").is(":checked")){
+            $( "#coverage_other").css('display', 'block');
+            $( "#coverage_other").css('visibility', 'visible');
+            }else{
+                $( "#coverage_other").css('display', 'none');
+                $( "#coverage_other").css('visibility', 'hidden');
+            }
+        });
+        
+        $("#vehicle_type" ).change(function () {   
+        if( $("#vehicle_type" ).val() == 'otro'){
+            $( "#other_vehicle_type").css('display', 'block');
+            $( "#other_vehicle_type").css('visibility', 'visible');
+        }else{
+            $( "#other_vehicle_type").css('display', 'none');
+            $( "#other_vehicle_type").css('visibility', 'hidden');
+        }
+            
+        });
+        
 
 
         window.onscroll = function () {
-
-
             animateNavBar();
-
-
         };
-
         window.top = function () {
-
             animateNavBar();
-
-
         };
 
 

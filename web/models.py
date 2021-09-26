@@ -33,7 +33,7 @@ class InsuranceCar(models.Model):
     model               = models.CharField('Modelo', blank=False, max_length=48,  db_column='Modelo')
     description_vehicle = models.CharField('Descripción del Vehículo', blank=False, max_length=100,  db_column='DescriptionVehicle')
     coverage_type       = models.CharField('Tipo de Cobertura', blank=False, max_length=48,  db_column='CoverageType')
-    coverage_optional   = models.CharField('Coberturas Opcionales', blank=False, max_length=48,  db_column='CoverageOptional')
+    coverage_optional   = models.CharField('Coberturas Opcionales', blank=False, max_length=100,  db_column='CoverageOptional')
     name_full           = models.CharField('Nombre Completo', blank=False, max_length=100,  db_column='NameFull')
     date_of_birth       = models.CharField('Fecha de Nacimiento', blank=False, max_length=48,  db_column='DateOfBirth')
     sex                 = models.CharField('Sexo', blank=False, max_length=10,  db_column='Sex')

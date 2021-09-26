@@ -16,6 +16,7 @@ def view_home(request):
     form_medical = LifeInsuranceForm(request.POST)
     form_car = InsuranceCarForm(request.POST)
     form_house = InsuranceHouseForm(request.POST)
+
     if request.method == 'POST' and form_medical.is_valid():
         name_full = form_medical.cleaned_data.get('name_full')
         date_of_birth = form_medical.cleaned_data.get('date_of_birth')
@@ -32,31 +33,6 @@ def view_home(request):
         parentDiabetes = form_medical.cleaned_data.get('parentDiabetes')
         sick = form_medical.cleaned_data.get('sick')
         comments = form_medical.cleaned_data.get('comments')
-
-        form = MedicalExpenses(
-            name_full=name_full,
-            date_of_birth=date_of_birth,
-            sex=sex,
-            marital_status=marital_status,
-            nationality=nationality,
-            profession=profession,
-            postal_code=postal_code,
-            address=address,
-            email=email,
-            num_phone=num_phone,
-            weight=weight,
-            height=height,
-            parentDiabetes=parentDiabetes,
-            sick=sick,
-            comments=comments,
-        )
-        try:
-            form.save()
-            messages.success(
-                request, 'Informacion enviada sera contactado en breve')
-        except:
-            messages.error(
-                request, 'Error al guardar Datos')
 
     elif request.method == 'POST' and form_life.is_valid():
 
@@ -137,6 +113,18 @@ def view_home(request):
             messages.error(
                 request, 'Error al guardar Datos')
 
+        
+    elif request.method == 'POST' and form_house.is_valid():
+        street = form_car.cleaned_data.get('street')
+        vehicle_type = form_car.cleaned_data.get('number')
+        vehicle_type = form_car.cleaned_data.get('suburb')
+        vehicle_type = form_car.cleaned_data.get('postal_code')
+        vehicle_type = form_car.cleaned_data.get('city')
+        vehicle_type = form_car.cleaned_data.get('state')
+        vehicle_type = form_car.cleaned_data.get('housing_type')
+        vehicle_type = form_car.cleaned_data.get('year_house')
+        vehicle_type = form_car.cleaned_data.get('year_house')
+
     return render(request, 'index.html', {
         'form_medical_expenses':form_medical_expenses,
         'form_life_insurance': form_life_insurance, 
@@ -144,6 +132,9 @@ def view_home(request):
         'form_insurance_house': form_insurance_house})
 
 
+
 def view_creditos(request):
 
     return render(request, 'creditos.html',{})
+
+
