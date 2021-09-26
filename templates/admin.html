@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/styles_form.css' %}">
+    <title>Login Administracion</title>
+</head>
+
+<body>
+    <div id="form-login">
+            <div id="container-form-login" class="container">
+                <form  class="form" method="post">
+                    {% csrf_token %}
+                    <p class="title">Login</p>
+
+                    <div class="line"></div>
+                    <div class="container-field">
+                        <label class="labe-field" for="user">Usuario</label>
+                        <input name="user" class="input-field" type="text"
+                            placeholder="Escribe tu usuario" />
+                    </div>
+                    <div class="container-field">
+                        <label class="labe-field" for="password">Contraseña</label>
+                        <input name="password" type="password"  class="input-field"
+                            placeholder="Escribe tu contraseña" />
+                    </div>
+                    <div class="container-button">
+                        <button type="submit" class="btn">Login</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+
+</body>
+
+</html>

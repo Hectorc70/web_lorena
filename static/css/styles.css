@@ -8,6 +8,11 @@
     src: url("../fonts/Poppins/Poppins-Bold.ttf");
 }
 
+@font-face{
+    font-family: "Poppins-Semi-Bold";
+    src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
+}
+
 
 
 .deshabilitado{
@@ -21,6 +26,10 @@
     --color-sombra-cards: #70707056;
     --color-contenedor:#F4F7F9;
     --color-texto: #8C9BA4;
+
+    --font-primary: "Poppins-Bold";
+    --font-secondary: "Poppins";
+    --font-subtitle: "Poppins-Semi-Bold";
 }
 
 *{
