@@ -68,6 +68,7 @@ body{
 }
 /* navagation bar */
 
+
 #header{
     display: flex;
     position: relative;
@@ -538,4 +539,7 @@ section{
 #container-copyright .important{
     font-family: 'Poppins-Bold';
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
