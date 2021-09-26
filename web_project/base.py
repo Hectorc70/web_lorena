@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     'web',
 ]
 
+LOGIN_URL = 'admin/'
+LOGOUT_REDIRECT_URL = 'admin/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

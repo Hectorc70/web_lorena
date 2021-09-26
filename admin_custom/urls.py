@@ -8,5 +8,6 @@ app_name = 'admin_custom'
 urlpatterns = [
     path('', login_admin, name='login'),
     path('home-admin/', view_admin, name='admin'),
+    path('logout/', logoutAdmin, name="logout"),
 ]
 

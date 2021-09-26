@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib import messages
 
+from web.models import *
 
 
 # Create your views here.
@@ -32,6 +33,7 @@ def login_admin(request):
 
     return render(request, 'login.html')
 
+
 @login_required()
 def logoutAdmin(request):
     logout(request)
@@ -41,4 +43,14 @@ def logoutAdmin(request):
 
 
 def view_admin(request):
-    return render(request, 'admin.html')
+    medical = MedicalExpenses.objects.all()
+    life = LifeInsurance.objects.all()
+    autos = InsuranceCar.objects.all()
+    house = InsuranceHouse.objects.all()
+
+    return render(request, 'admin.html', {
+        'medical': medical,
+        'life': life,
+        'autos': autos,
+        'house': house,
+    })
