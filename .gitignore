@@ -22,3 +22,5 @@ web/migrations/__pycache__/__init__.cpython-39.pyc
 web/__pycache__/
 
 web/migrations/__pycache__/
+
+admin_custom/__pycache__/
