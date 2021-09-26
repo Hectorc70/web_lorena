@@ -269,7 +269,11 @@ class InsuranceCarForm(forms.Form):
                                        ('automovil', 'Motocicleta'),
                                        ('otro', 'Otros'))))
 
-    other_vehicle = forms.CharField(label='Otro Vehículo', max_length=48)
+    other_vehicle = forms.CharField(
+        label='Otro Vehículo', 
+        max_length=48, 
+        required=False,
+        )
 
     model = forms.CharField(label='Modelo', max_length=48)
     description_vehicle = forms.CharField(
@@ -294,7 +298,10 @@ class InsuranceCarForm(forms.Form):
                                                             'Auto Sustituto'),
                                                            ('otro', 'Otros')])
 
-    coverage_other = forms.CharField(max_length=48, label='Otros Descripción')
+    coverage_other = forms.CharField(
+        max_length=48, 
+        required=False,
+        label='Otros Descripción')
 
     name_full = forms.CharField(max_length=48, label='Nombre Completo',)
     date_of_birth = forms.CharField(
@@ -308,7 +315,8 @@ class InsuranceCarForm(forms.Form):
     postal_code = forms.CharField(max_length=10, label='Codigo Postal',)
     email = forms.EmailField(label='Correo Electronico',)
     num_phone = forms.CharField(max_length=10, label='Numero de Whatsapp',)
-    comments = forms.CharField(max_length=300, label='Comentarios Adicionales',
+    comments = forms.CharField(required=False,
+        max_length=300, label='Comentarios Adicionales',
                                widget=Textarea(attrs={'cols': 80, 'rows': 20}))
 
     def __init__(self, *args, **kwargs):
