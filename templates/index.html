@@ -714,7 +714,7 @@
             </div>
         </form>
 
-        <form id="form-house" action="post" class="form">
+        <form id="form-house" action="" method="post" class="form">
             {% csrf_token %}
             <div class="conte-btn-cerrar">
                 <a onclick="cerrarVisor('form-house')" class="btn-cerrar">
@@ -752,6 +752,17 @@
 
     </div>
     <script type="text/javascript">
+        $("#coverage_type").change(function () {
+            
+            if($("#coverage_type").val() == 'otro'){
+            $( "#id_coverage_type_other").css('display', 'block');
+            $( "#id_coverage_type_other").css('visibility', 'visible');
+            }else{
+                $( "#id_coverage_type_other").css('display', 'none');
+                $( "#id_coverage_type_other").css('visibility', 'hidden');
+            }
+        });
+
         $("#id_coverage_optional_4" ).change(function () {   
             if($("#id_coverage_optional_4").is(":checked")){
             $( "#coverage_other").css('display', 'block');
@@ -772,8 +783,20 @@
         }
             
         });
-        
 
+
+        $("#id_housing_type" ).change(function () {   
+            if($("#id_housing_type").val() == 'otro'){
+            $( "#id_housing_type_other").css('display', 'block');
+            $( "#id_housing_type_other").css('visibility', 'visible');
+            }else{
+                $( "#id_housing_type_other").css('display', 'none');
+                $( "#id_housing_type_other").css('visibility', 'hidden');
+            }
+        });
+
+
+        
 
         window.onscroll = function () {
             animateNavBar();

@@ -133,7 +133,6 @@ def view_home(request):
             coverage_optional.remove('otro')
             coverage_optional.append(coverage_other)
         
-        import pdb; pdb.set_trace()
         form = InsuranceCar(
             vehicle_type=vehicle_type,
             model=model,
@@ -157,15 +156,62 @@ def view_home(request):
 
         
     elif request.method == 'POST' and form_house.is_valid():
-        street = form_car.cleaned_data.get('street')
-        vehicle_type = form_car.cleaned_data.get('number')
-        vehicle_type = form_car.cleaned_data.get('suburb')
-        vehicle_type = form_car.cleaned_data.get('postal_code')
-        vehicle_type = form_car.cleaned_data.get('city')
-        vehicle_type = form_car.cleaned_data.get('state')
-        vehicle_type = form_car.cleaned_data.get('housing_type')
-        vehicle_type = form_car.cleaned_data.get('year_house')
-        vehicle_type = form_car.cleaned_data.get('year_house')
+        street = form_house.cleaned_data.get('street') 
+        number = form_house.cleaned_data.get('number') 
+        suburb = form_house.cleaned_data.get('suburb') 
+        postal_code = form_house.cleaned_data.get('postal_code') 
+        city = form_house.cleaned_data.get('city') 
+        state = form_house.cleaned_data.get('state') 
+        housing_type = form_house.cleaned_data.get('housing_type') 
+        housing_type_other = form_house.cleaned_data.get('housing_type_other') 
+        year_house = form_house.cleaned_data.get('year_house') 
+        coverage_type = form_house.cleaned_data.get('coverage_type') 
+        coverage_type_other = form_house.cleaned_data.get('coverage_type_other') 
+        house_in_river = form_house.cleaned_data.get('house_in_river') 
+        security_measures = form_house.cleaned_data.get('security_measures') 
+        name_full = form_house.cleaned_data.get('name_full') 
+        contract_type = form_house.cleaned_data.get('contract_type') 
+        email = form_house.cleaned_data.get('email') 
+        num_phone = form_house.cleaned_data.get('num_phone') 
+        comments = form_house.cleaned_data.get('comments') 
+
+        import pdb; pdb.set_trace()
+        if housing_type == 'otro':
+            housing_type = housing_type_other
+        
+        if coverage_type == 'otro':
+            coverage_type = coverage_type_other
+        
+
+        form = InsuranceHouse(
+            street = street,
+            number = number,
+            suburb = suburb,
+            postal_code = postal_code,
+            city = city,
+            state = state,
+            housing_type = housing_type,
+            year_house = year_house,
+            coverage_type = coverage_type,
+            house_in_river = house_in_river,
+            security_measures = security_measures,
+            name_full = name_full,
+            contract_type = contract_type,
+            email = email,
+            num_phone = num_phone,
+            comments = comments,
+        )
+
+        try:
+            form.save()
+            messages.success(
+                request, 'Informacion enviada sera contactado en breve')
+        except:
+            messages.error(
+                request, 'Error al guardar Datos')
+
+
+
 
     return render(request, 'index.html', {
         'form_medical_expenses':form_medical_expenses,

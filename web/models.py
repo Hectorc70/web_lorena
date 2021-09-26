@@ -62,6 +62,7 @@ class InsuranceHouse(models.Model):
     year_house      = models.CharField('Año de construcción de vivienda', blank=False, max_length=4,  db_column='YearHouse')
     coverage_type   = models.CharField('Tipo de Cobertura', blank=False, max_length=48,  db_column='CoverageType')
     house_in_river  = models.BooleanField('Casa cerca de Rio', blank=False, db_column='houseInRiver')
+    security_measures  = models.CharField('Medidas de Seguridad', max_length=100, blank=False, db_column='SecurityMeasures')
     name_full       = models.CharField('Nombre Completo', blank=False, max_length=100,  db_column='NameFull')
     contract_type   = models.CharField('Tipo de Contratante', blank=False, max_length=48,  db_column='ContractType')
     email           = models.EmailField('Correo Electronico', blank=False, max_length=48,  db_column='Email')

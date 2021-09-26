@@ -288,3 +288,13 @@ select:focus{
     display: none;
     visibility: hidden;
 }
+
+#id_housing_type_other{
+    display: none;
+    visibility: hidden;
+}
+
+#id_coverage_type_other{
+    display: none;
+    visibility: hidden;
+}

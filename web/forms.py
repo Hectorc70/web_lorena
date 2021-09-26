@@ -259,7 +259,6 @@ class LifeInsuranceForm(forms.ModelForm):
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
 
-
 class InsuranceCarForm(forms.Form):
 
     vehicle_type = forms.CharField(max_length=48, label='Tipo de Vehículo',
@@ -270,10 +269,10 @@ class InsuranceCarForm(forms.Form):
                                        ('otro', 'Otros'))))
 
     other_vehicle = forms.CharField(
-        label='Otro Vehículo', 
-        max_length=48, 
+        label='Otro Vehículo',
+        max_length=48,
         required=False,
-        )
+    )
 
     model = forms.CharField(label='Modelo', max_length=48)
     description_vehicle = forms.CharField(
@@ -299,7 +298,7 @@ class InsuranceCarForm(forms.Form):
                                                            ('otro', 'Otros')])
 
     coverage_other = forms.CharField(
-        max_length=48, 
+        max_length=48,
         required=False,
         label='Otros Descripción')
 
@@ -307,16 +306,16 @@ class InsuranceCarForm(forms.Form):
     date_of_birth = forms.CharField(
         max_length=48, label='Nombre Completo', widget=DateTimeInput())
 
-    sex = forms.CharField(max_length=48, label='Sexo', widget= forms.Select( choices=(('', ''), ('masculino', 'Masculino'),
-                                                                ('femenino',
-                                                                 'Femenino'),
-                                                                ('sin especificar', 'Sin Especificar'))))
+    sex = forms.CharField(max_length=48, label='Sexo', widget=forms.Select(choices=(('', ''), ('masculino', 'Masculino'),
+                                                                                    ('femenino',
+                                                                                     'Femenino'),
+                                                                                    ('sin especificar', 'Sin Especificar'))))
 
     postal_code = forms.CharField(max_length=10, label='Codigo Postal',)
     email = forms.EmailField(label='Correo Electronico',)
     num_phone = forms.CharField(max_length=10, label='Numero de Whatsapp',)
     comments = forms.CharField(required=False,
-        max_length=300, label='Comentarios Adicionales',
+                               max_length=300, label='Comentarios Adicionales',
                                widget=Textarea(attrs={'cols': 80, 'rows': 20}))
 
     def __init__(self, *args, **kwargs):
@@ -354,7 +353,7 @@ class InsuranceCarForm(forms.Form):
 
         self.fields['coverage_other'].widget.attrs.update({
             'class': 'input-field',
-            'id':'coverage_other',
+            'id': 'coverage_other',
             'placeholder': 'Especifica',
         })
         self.fields['coverage_optional'].label = 'Selecciona el Tipos de Coberturas Opcionales:'
@@ -398,36 +397,64 @@ class InsuranceCarForm(forms.Form):
         self.fields['comments'].label = '¿Deseas agregar alguna información adicional?'
 
 
-class InsuranceHouseForm(forms.ModelForm):
-    class Meta:
-        model = InsuranceHouse
-        fields = '__all__'
-        exclude = ['id_house']
-        widgets = {
+class InsuranceHouseForm(forms.Form):
+    street = forms.CharField(max_length=48, label='Calle',)
+    number = forms.CharField(max_length=48, label='Numero',)
+    suburb = forms.CharField(max_length=48, label='Colonia',)
+    postal_code = forms.CharField(max_length=48, label='Codigo Postal')
+    city = forms.CharField(max_length=48, label='Ciudad',)
+    state = forms.CharField(max_length=48, label='Estado',)
+    housing_type = forms.CharField(max_length=48,
+                                   widget=forms.Select(choices=(
+                                       ('', ''),
+                                       ('casa unifamiliar o en condominio horizontal',
+                                        'Casa Unifamiliar o en Condominio Horizontal'),
+                                       ('departamento en condominio',
+                                        'Departamento en Condominio'),
+                                       ('otro', 'Otros'))))
+    housing_type_other = forms.CharField(
+        required=False, max_length=48, label='Otro tipo de vivienda:',)
 
-            'housing_type': forms.Select(choices=(
-                ('', ''),
-                ('casa unifamiliar o en condominio horizontal',
-                 'Casa Unifamiliar o en Condominio Horizontal'),
-                ('departamento en condominio', 'Departamento en Condominio'),
-                ('otro', 'Otros'))
-            ),
+    year_house = forms.CharField(
+        max_length=48, label='Año de construcción de vivienda',)
 
-            'coverage_type': forms.Select(choices=(
-                ('', ''),
-                ('Proteccion total', 'Protección Total (incendio, fenómenos meteorológicos, sismo y erupción volcánica)'),
-                ('Proteccion Basica', 'Protección Básica (sólo incendio)'),
-                ('otro', 'Otros'))
-            ),
+    coverage_type = forms.CharField(max_length=48,
+                                    widget=forms.Select(choices=(
+                                        ('', ''),
+                                        ('Proteccion total', 'Protección Total (incendio, fenómenos meteorológicos, sismo y erupción volcánica)'),
+                                        ('Proteccion Basica',
+                                         'Protección Básica (sólo incendio)'),
+                                        ('otro', 'Otros'))))
 
-            'contract_type': forms.Select(choices=(
-                ('', ''),
-                ('dueño o arrendador', 'Dueño o Arrendador'),
-                ('arrendatario', 'Arrendatario'),)
-            ),
+    coverage_type_other = forms.CharField(
+        required=False, max_length=48, label='Otro tipo de cobertura:',)
 
-            'comments': Textarea(attrs={'cols': 80, 'rows': 20})
-        }
+    house_in_river = forms.BooleanField()
+    security_measures = forms.CharField(max_length=100,
+                                        widget=forms.Select(
+                                            choices=(
+                                                ('', ''),
+                                                ('Proteccion Perimetral',
+                                                 'Protección perimetral)'),
+                                                ('Alarma Local', 'Alarma Local'),
+                                                ('Alarma Central',
+                                                 'Alarma Central'),
+                                                ('Control de acceso y vigilancia las 24 horas',
+                                                 'Control de acceso y vigilancia las 24 horas')
+
+                                            )))
+    name_full = forms.CharField(max_length=48)
+    contract_type = forms.CharField(max_length=48,
+                                    widget=forms.Select(
+                                        choices=(('', ''),
+                                                 ('dueño o arrendador',
+                                                  'Dueño o Arrendador'),
+                                                 ('arrendatario', 'Arrendatario'))))
+    email = forms.EmailField(label='Correo Electronico')
+    num_phone = forms.CharField(max_length=10, label='Numero de Whatsapp',)
+    comments = forms.CharField(required=False,
+                               max_length=300, label='Comentarios Adicionales',
+                               widget=Textarea(attrs={'cols': 80, 'rows': 20}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -467,6 +494,11 @@ class InsuranceHouseForm(forms.ModelForm):
         })
         self.fields['housing_type'].label = 'Selecciona tu tipo de Vivienda'
 
+        self.fields['housing_type_other'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder': 'Especifica',
+        })
+
         self.fields['year_house'].widget.attrs.update({
             'class': 'input-field',
             'placeholder': 'Escribe el Año de Construcción',
@@ -474,22 +506,36 @@ class InsuranceHouseForm(forms.ModelForm):
 
         self.fields['coverage_type'].widget.attrs.update({
             'class': 'select-field',
+            'id': 'coverage_type',
         })
         self.fields['coverage_type'].label = '¿Qué tipo de cobertura deseas adquirir para tu vivienda? '
+
+        self.fields['coverage_type_other'].widget.attrs.update({
+            'class': 'input-field',
+            'placeholder': 'Especifica',
+        })
 
         self.fields['house_in_river'].widget.attrs.update({
             'class': 'input-field',
         })
         self.fields['house_in_river'].label = '¿La vivienda se encuentra a menos de 250 metros de un río, canal o laguna?'
 
+        self.fields['security_measures'].widget.attrs.update({
+            'class': 'select-field',
+        })
+        self.fields['security_measures'].label = 'Actualmente, ¿La vivienda cuenta con alguna de las siguientes medidas de seguridad?'
+
         self.fields['name_full'].widget.attrs.update({
             'class': 'input-field',
             'placeholder': 'Escribe Tu Nombre Completo',
         })
+        self.fields['name_full'].label = 'Nombre Completo'
 
         self.fields['contract_type'].widget.attrs.update({
             'class': 'select-field',
         })
+
+        self.fields['contract_type'].label = 'Tipo de contratante'
 
         self.fields['email'].widget.attrs.update({
             'class': 'input-field',
