@@ -25,5 +25,4 @@ urlpatterns = [
     path('admin/', include('admin_custom.urls', namespace='admin-c')),
     path('creditos/', view_creditos, name="creditos"),
 
-]
-""" + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) """
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
