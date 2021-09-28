@@ -21,81 +21,88 @@
 
 <body id="body">
 
-        {% if messages %}
-        <!--  <div class="prueba">{{messages.length}}</div> -->
-            {% for mensaje in messages %}
-            {% if mensaje.tags == 'success' %}
-            {% endif %}
-            {% if mensaje.tags == 'error' %}
-            {% endif %}
-            {% endfor%}
-        {% endif %}
-    
+    {% if messages %}
+    <!--  <div class="prueba">{{messages.length}}</div> -->
+    {% for mensaje in messages %}
+    {% if mensaje.tags == 'success' %}
+    {% endif %}
+    {% if mensaje.tags == 'error' %}
+    {% endif %}
+    {% endfor%}
+    {% endif %}
 
-    <section id="section-contact-about-me">
-        <header  style="box-shadow: 0px 10px 20px 0px #1111115d;">                 
-                    <h3><a href="https://www.lorenacastrob.com/">Inicio</a>
-                    </h3>
-                </header>
+
+    <section id="section-credits">
+        <header id="header-credits" >
+            <h3><a href="https://www.lorenacastrob.com/">Inicio</a>
+            </h3>
+        </header>
         <div id="container-contact-about-me">
 
-             
-     
-            
-                <br>
-            
-            <ul>
-                        <h2 class="title-section">CREDITOS</h2>
+            <br>
 
-                         <li class="subtitle">
-                            <div>    Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                        </li>
+            <ul id="section-logos">
+                <h2 class="title-section">CREDITOS</h2>
+
+                <li class="subtitle">
+                    <div> Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </li>
 
 
-                        <li class="subtitle">
-                            <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
-                        </li>
-                        <li class="subtitle">
-                            <div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Esos iconos">Esos iconos</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                        </li>
-                        <li class="subtitle">
-                            <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Iconos redondos">Iconos redondos</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                        </li>
-                        <li class="subtitle">
-                            <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfecto">Pixel perfecto</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                        </li>
-                        <li class="subtitle">
-                            <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                        </li>
-                        <li class="subtitle">
-                            <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
-                        </li>
-                    </ul>
-                    <br>
-                    <br>
-                    <ul>
-                        <h2 class="title-section">CREDITOS IMAGENES</h2>
-                        <li class="subtitle">
-                            <a href="https://pixabay.com/es/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2590810">StockSnap</a> en <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2590810">Pixabay</a>
-                        </li>
-                        <li class="subtitle">
-                            <a href='https://www.freepik.es/fotos/coche'>Foto de Coche creado por gpointstudio - www.freepik.es</a>
-                        </li>
-                        <li class="subtitle">
-                            <a href="https://pixabay.com/es/users/089photoshootings-4258482/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1979272">Werner Heiber</a> en <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1979272">Pixabay</a>
-                        </li>
-                    </ul>
+                <li class="subtitle">
+                    <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                            href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+                </li>
+                <li class="subtitle">
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Esos iconos">Esos
+                            iconos</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                    </div>
+                </li>
+                <li class="subtitle">
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons"
+                            title="Iconos redondos">Iconos redondos</a> from <a href="https://www.flaticon.com/"
+                            title="Flaticon">www.flaticon.com</a></div>
+                </li>
+                <li class="subtitle">
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect"
+                            title="Pixel perfecto">Pixel perfecto</a> from <a href="https://www.flaticon.com/"
+                            title="Flaticon">www.flaticon.com</a></div>
+                </li>
+                <li class="subtitle">
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar"
+                            title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/"
+                            title="Flaticon">www.flaticon.com</a></div>
+                </li>
+                <li class="subtitle">
+                    <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect"
+                            title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/"
+                            title="Flaticon">www.flaticon.es</a></div>
+                </li>
+            </ul>
+            <br>
+            <br>
+            <ul id="section-images">
+                <h2 class="title-section">CREDITOS IMAGENES</h2>
+                <li class="subtitle">
+                    <a
+                        href="https://pixabay.com/es/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2590810">StockSnap</a>
+                    en <a
+                        href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2590810">Pixabay</a>
+                </li>
+                <li class="subtitle">
+                    <a href='https://www.freepik.es/fotos/coche'>Foto de Coche creado por gpointstudio -
+                        www.freepik.es</a>
+                </li>
+                <li class="subtitle">
+                    <a
+                        href="https://pixabay.com/es/users/089photoshootings-4258482/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1979272">Werner
+                        Heiber</a> en <a
+                        href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1979272">Pixabay</a>
+                </li>
+            </ul>
 
-            <div id="container-about-me">
-                <div id="container-about-me-description">
-                    
-                    
-                </div>
-                <div id="container-value-proposal-description">
-                    
-                    
-                </div>
-            </div>
+          
         </div>
     </section>
 
@@ -114,14 +121,6 @@
                             fill="#fff" />
                     </svg>
                 </a>
-
-
-
-
-
-
-
-
                 <a target="blanck" href="https://www.linkedin.com/in/lorena-c-8621703b/" class="social-network">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 382 382"
@@ -160,7 +159,6 @@
                         </g>
                     </svg>
                 </a>
-
                 <a target="blanck" href="https://www.instagram.com/lorens57/" class="social-network">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         enable-background="new 0 0 24 24" viewBox="0 0 24 24">
@@ -181,8 +179,7 @@
 
             </div>
             <div id="container-copyright">
-                <a a target="blanck" class="link important"
-                href="https://hectorgarciadev.online/">Desarrollador</a>
+                <a a target="blanck" class="link important" href="https://hectorgarciadev.online/">Desarrollador</a>
                 <a target="blanck" class="link" href="/creditos/"> Creditos | </a>
                 <a target="blanck" class="link" href="creditos.html"> | Creditos | </a>
 
@@ -191,7 +188,6 @@
             </div>
             <p>Copyright © 2021 Lorena Castro Barranco</p>
         </div>
-
     </footer>
 
 
