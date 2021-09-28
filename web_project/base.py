@@ -1,7 +1,7 @@
 
 import os
-#from web_project.settings.dev import *
-from web_project.settings.prod import *
+from web_project.settings.dev import *
+#from web_project.settings.prod import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 
@@ -31,7 +31,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'web_project.urls'
@@ -104,4 +104,4 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
