@@ -24,3 +24,5 @@ web/__pycache__/
 web/migrations/__pycache__/
 
 admin_custom/__pycache__/
+
+admin_custom/migrations/__pycache__/
