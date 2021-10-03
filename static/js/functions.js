@@ -17,7 +17,7 @@ async function ViewForm(id_form) {
   let form = document.getElementById(id_form);
   let tam = tamVentana();
   let widthContainerForm = "100%";
-  let heighContainerForm = "100%";
+  let heighContainerForm = "80%";
 
   if (tam[0] > 1116) {
     widthContainerForm = "50%";
@@ -25,6 +25,7 @@ async function ViewForm(id_form) {
     widthContainerForm = "80%";
   } else if (tam[0] <= 600) {
     widthContainerForm = "95%";
+    heighContainerForm = "90%"
   }
 
   form.style.display = "block";
@@ -34,7 +35,7 @@ async function ViewForm(id_form) {
   visor.style.display = "block";
   visor.style.visibility = "visible";
   visor.style.width = widthContainerForm;
-  visor.style.height = "80%";
+  visor.style.height = heighContainerForm;
   visor.style.transition = "all 0.5s ease-in-out";
   btn.style.display = "flex";
 }
