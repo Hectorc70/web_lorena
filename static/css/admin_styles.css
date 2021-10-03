@@ -78,48 +78,47 @@
     margin-top: 30px;
 }
 .c-option {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: space-around;
-    justify-content: space-between;
-    width: 100%;
-    height: 40px;
-    background-color: var(--color-primario);
-    border-radius: 0.5rem;
-    margin-bottom: 20px;
-    cursor: pointer;
-    text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-secundario);
+  border-radius: 0.5rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .c-option:hover {
-    background-color: var(--color-resalte);
+  background-color: var(--color-principal);
 }
 .c-text {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    width: 60%;
-    height: 60%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  width: 60%;
+  height: 60%;
 }
 .c-text .text-title {
-    font-family: var(--font-secundario);
-    color: var(--color-card);
-    font-size: 1.4rem;
+  font-family: var(--font-secondary);
+  color: var(--color-secundario2);
+  font-size: 1.0rem;
 }
 .c-icon {
-    display: block;
-    width: 30%;
-    height: 60%;
+  display: block;
+  width: 30%;
+  height: 60%;
 }
 .c-icon .icon {
-    display: block;
-    width: 100%;
-    height: 100%;
-    fill: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: white;
 }
-
 #conte-btn-admin {
     display: flex;
     align-items: center;
