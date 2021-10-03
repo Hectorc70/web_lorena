@@ -175,9 +175,18 @@ overflow: auto;
     display: none;
     visibility: hidden;
 }
-#tbl-life{
+#tbl-car{
     display: none;
     visibility: hidden;
+}
+
+#tbl-life{
+  display: none;
+  visibility: hidden;
+}
+#tbl-house{
+  display: none;
+  visibility: hidden;
 }
 .tbl {
   width: 90%;
@@ -189,16 +198,16 @@ overflow: auto;
   justify-content: space-between;
   flex-direction: row;
   width: 100%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secundario2);
   border-radius: 0.5rem;
   height: 30px;
   padding: 5px;
 }
 
 .title-tbl {
-  color: var(--color-primary);
-  font-family: var(--font-subtitle);
-  font-size: 1rem;
+  color: var(--color-principal);
+  font-family: var(--font-primary);
+  font-size: 1.0rem;
   height: 25px;
 }
 
@@ -216,7 +225,7 @@ overflow: auto;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secundario);
 }
 
 .cell {
@@ -244,5 +253,5 @@ overflow: auto;
 }
 
 .cell-action:hover .icon-view {
-  fill: var(--color-primary);
+  fill: var(--color-principal);
 }

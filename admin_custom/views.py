@@ -51,6 +51,6 @@ def view_admin(request):
     return render(request, 'admin.html', {
         'medical': medical,
         'life': life,
-        'autos': autos,
+        'car': autos,
         'house': house,
     })
