@@ -217,6 +217,7 @@ overflow: auto;
   font-family: var(--font-primary);
   font-size: 1.0rem;
   height: 25px;
+  width: 20%;
 }
 
 .body-tbl {
@@ -238,6 +239,7 @@ overflow: auto;
 
 .cell {
   height: 20px;
+  width: 20%;
   font-family: var(--font-secondary);
   color: #8b8b8b;
   font-size: 1rem;
