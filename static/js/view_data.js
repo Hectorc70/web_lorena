@@ -1,7 +1,7 @@
 'Use strict';
 
-function viewTable(idTable){
-    let tbls = ['tbl-medical','tbl-companys']
+async function viewTable(idTable){
+    let tbls = ['tbl-medical','tbl-car', 'tbl-house','tbl-life']
     let container = document.getElementById('container-data');
     let text = document.getElementById('text-tbl-no-data');
     let table = document.getElementById(idTable);
