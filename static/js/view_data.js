@@ -6,7 +6,6 @@ async function viewTable(idTable){
     let text = document.getElementById('text-tbl-no-data');
     let table = document.getElementById(idTable);
     
-    debugger;
     for(let i =0; i < tbls.length; i++){
         if (idTable != tbls[i]){
             let tableNot = document.getElementById(tbls[i]);

@@ -23,6 +23,7 @@ urlpatterns = [
     path('', view_home, name="home"),
     #path('admin/', admin.site.urls),
     path('admin/', include('admin_custom.urls', namespace='admin-c')),
+    path('admin/', include('admin_custom.urls', namespace='admin-c')),
     path('creditos/', view_creditos, name="creditos"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

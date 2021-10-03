@@ -27,23 +27,31 @@
     width: 100%;
     height: 40px;
 }
+#nav-admin #conte-profile{
+  position: absolute;
+  width: 200px;
+  right: 0px;
 
+}
 
 
 #nav-admin #container-option-main-user{
     display: block;
     visibility:visible;
-    position:relative;
 }
 
 #nav-admin #container-option-main-user a{
     position:relative;
     text-decoration:none;
-    font-family: var(--font-primario);
+    font-family: var(--font-primary);
 }
 
 #nav-admin #container-option-main-user:hover a{
-    background-color:var(--color-primario)
+    background-color:var(--color-principal)
+}
+
+#nav-admin #container-option-main-user:hover a{
+  color: white;
 }
 
 #nav-admin #conte-text {
@@ -254,4 +262,10 @@ overflow: auto;
 
 .cell-action:hover .icon-view {
   fill: var(--color-principal);
+}
+
+#container-btn-download{
+  position: relative;
+  bottom:  0px;
+  right: 0px;
 }
