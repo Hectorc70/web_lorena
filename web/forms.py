@@ -73,24 +73,24 @@ class MedicalExpensesForm(forms.ModelForm):
 
         self.fields['postal_code'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Codigo Postal',
+            'placeholder': 'Escribe tu Código Postal',
         })
 
         self.fields['address'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Direccion calle, numero, colonia',
+            'placeholder': 'Escribe tu Dirección calle, número, colonia',
         })
 
         self.fields['email'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Correo Electronico',
+            'placeholder': 'Escribe tu Correo Electrónico',
         })
 
         self.fields['num_phone'].widget.attrs.update({
             'class': 'input-field',
             'placeholder': 'Escribe tu Número de Whatsapp',
         })
-        self.fields['num_phone'].label = 'Numero de Whatsapp'
+        self.fields['num_phone'].label = 'Número de Whatsapp'
 
         self.fields['weight'].widget.attrs.update({
             'class': 'input-field',
@@ -146,8 +146,8 @@ class LifeInsuranceForm(forms.ModelForm):
             'type_insurance': forms.Select(choices=(('', ''),
                                                     ('ahorro', 'Para el Ahorro (imagina recibir después de 10 años los ingresos para cumplir tus sueños)'),
                                                     ('retiro', 'Para el Retiro (cuando termines de trabajar recibir rentas vitalicias para vivir tu retiro)'),
-                                                    ('educacion', 'Para la Educación de menores (empieza el proyecto de educación para tus hijos)'),
-                                                    ('proteccion ', 'Para la Protección (en caso de que no estés tus seres queridos tendrán los recursos)'),
+                                                    ('educación', 'Para la Educación de menores (empieza el proyecto de educación para tus hijos)'),
+                                                    ('protección ', 'Para la Protección (en caso de que no estés tus seres queridos tendrán los recursos)'),
                                                     )),
 
             'mount_year': forms.Select(choices=(
@@ -200,24 +200,24 @@ class LifeInsuranceForm(forms.ModelForm):
 
         self.fields['postal_code'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Codigo Postal',
+            'placeholder': 'Escribe tu Código Postal',
         })
 
         self.fields['address'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Direccion calle, numero, colonia',
+            'placeholder': 'Escribe tu Dirección calle, número, colonia',
         })
 
         self.fields['email'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Correo Electronico',
+            'placeholder': 'Escribe tu Correo Electrónico',
         })
 
         self.fields['num_phone'].widget.attrs.update({
             'class': 'input-field',
             'placeholder': 'Escribe tu Número de Whatsapp',
         })
-        self.fields['num_phone'].label = 'Numero de Whatsapp'
+        self.fields['num_phone'].label = 'Número de Whatsapp'
 
         self.fields['weight'].widget.attrs.update({
             'class': 'input-field',
@@ -377,19 +377,19 @@ class InsuranceCarForm(forms.Form):
 
         self.fields['postal_code'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Codigo Postal',
+            'placeholder': 'Escribe tu Código Postal',
         })
 
         self.fields['email'].widget.attrs.update({
             'class': 'input-field',
-            'placeholder': 'Escribe tu Correo Electronico',
+            'placeholder': 'Escribe tu Correo Electrónico',
         })
 
         self.fields['num_phone'].widget.attrs.update({
             'class': 'input-field',
             'placeholder': 'Escribe tu Número de Whatsapp',
         })
-        self.fields['num_phone'].label = 'Numero de Whatsapp'
+        self.fields['num_phone'].label = 'Número de Whatsapp'
 
         self.fields['comments'].widget.attrs.update({
             'class': 'input-field input-text-area',
