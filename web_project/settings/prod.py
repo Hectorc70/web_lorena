@@ -10,7 +10,7 @@ ALLOWED_HOSTS = [os.getenv("DJANGO_ALLOWED_HOSTS"),
 'web-lorena-d6o8t.ondigitalocean.app'
 ]
 
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True
 
 DATABASES = {
         'default': {
