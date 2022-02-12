@@ -19,7 +19,7 @@ from django.urls.conf import include
 from web.views import *
 from django.conf import settings
 from django.conf.urls.static import static
-urlpatterns = [
+""" urlpatterns = [
     path('', view_home, name="home"),
     #path('admin/', admin.site.urls),
     path('admin/', include('admin_custom.urls', namespace='admin-c')),
@@ -27,3 +27,13 @@ urlpatterns = [
     path('creditos/', view_creditos, name="creditos"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+"""
+
+urlpatterns = [
+    path('', view_home, name="home"),
+    #path('admin/', admin.site.urls),
+    path('admin/', include('admin_custom.urls', namespace='admin-c')),
+    path('admin/', include('admin_custom.urls', namespace='admin-c')),
+    path('creditos/', view_creditos, name="creditos"),
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
