@@ -29,7 +29,7 @@ DATABASES = {
 
 SECRET_KEY = config("DJANGO_SECRET_KEY", get_random_secret_key())
 
-ALLOWED_HOSTS = [config("DJANGO_ALLOWED_HOSTS"),
+ALLOWED_HOSTS = [
 'www.lorenacastrob.com',
 'lorenacastrob.com', 
 'web-lorena-d6o8t.ondigitalocean.app',
