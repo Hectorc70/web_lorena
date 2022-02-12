@@ -27,7 +27,7 @@ DATABASES = {
 } """
 
 
-SECRET_KEY = config("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 ALLOWED_HOSTS = [
 'www.lorenacastrob.com',
