@@ -7,7 +7,7 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 tipo = config['DEV']
 
-ALLOWED_HOSTS = ['192.168.0.194', '127.0.0.1', '']
+ALLOWED_HOSTS = ['192.168.0.194', '127.0.0.1', 'lorenacastro.herokuapp.com']
 SECRET_KEY = tipo['SECRET_KEY']
 DEBUG = True
 
